@@ -966,6 +966,8 @@ public partial class Offer
             this.sellerField = value;
         }
     }
+
+    public bool BestOffer { get; set; }
 }
 
 public partial class Seller
