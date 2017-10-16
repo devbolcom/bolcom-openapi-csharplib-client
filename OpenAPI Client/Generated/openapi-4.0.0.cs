@@ -411,19 +411,21 @@ public partial class Product
         }
     }
 
-    [System.Xml.Serialization.XmlArrayAttribute(Order = 17)]
-    [System.Xml.Serialization.XmlArrayItemAttribute("ParentCategories", typeof(ParentCategory), IsNullable = false)]
-    public List<ParentCategory> ParentCategoryPaths
+    public List<ParentCategoryList> ParentCategoryPaths
     {
-        get
-        {
-            return this.parentCategoryPathsField;
-        }
-        set
-        {
-            this.parentCategoryPathsField = value;
-        }
+        get;
+        set;
     }
+}
+
+public partial class ParentCategoryList
+{
+    public List<ParentCategory> ParentCategories
+    {
+        get;
+        set;
+    }
+
 }
 
 public partial class TrackList
@@ -1223,7 +1225,7 @@ public partial class ParentCategory
 
     private string nameField;
 
-    public string id
+    public string Id
     {
         get
         {
@@ -1235,7 +1237,7 @@ public partial class ParentCategory
         }
     }
 
-    public string name
+    public string Name
     {
         get
         {
