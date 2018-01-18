@@ -14,7 +14,7 @@ namespace Bol.OpenAPI.Exception.Handler
                 StreamReader reader = new StreamReader(stream, Encoding.UTF8);
                 string responseString = reader.ReadToEnd();
                 Error error = JsonConvert.DeserializeObject<Error>(responseString);
-                return new BasicApiException(error.Code, error.Message);
+                return new BasicApiException(response.StatusCode, error.Code, error.Message);
             }            
         }
     }
