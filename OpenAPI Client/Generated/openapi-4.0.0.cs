@@ -997,6 +997,8 @@ public partial class Seller
 
     private string addressLine2Field;
 
+    private Rating sellerRatingField;
+
     public string Id
     {
         get
@@ -1152,6 +1154,105 @@ public partial class Seller
         set
         {
             this.addressLine2Field = value;
+        }
+    }
+
+    public Rating SellerRating
+    {
+        get
+        {
+            return this.sellerRatingField;
+        }
+        set
+        {
+            this.sellerRatingField = value;
+        }
+    }
+}
+
+public class Rating
+{
+    private string ratingMethodField;
+
+    private string sellerRatingField;
+
+    private string productInformationRatingField;
+
+    private string deliveryTimeRatingField;
+
+    private string shippingRatingField;
+
+    private string serviceRatingField;
+
+    public string RatingMethod
+    {
+        get
+        {
+            return this.ratingMethodField;
+        }
+        set
+        {
+            this.ratingMethodField = value;
+        }
+    }
+
+    public string SellerRating
+    {
+        get
+        {
+            return this.sellerRatingField;
+        }
+        set
+        {
+            this.sellerRatingField = value;
+        }
+    }
+
+    public string ProductInformationRating
+    {
+        get
+        {
+            return this.productInformationRatingField;
+        }
+        set
+        {
+            this.productInformationRatingField = value;
+        }
+    }
+
+    public string DeliveryTimeRating
+    {
+        get
+        {
+            return this.deliveryTimeRatingField;
+        }
+        set
+        {
+            this.deliveryTimeRatingField = value;
+        }
+    }
+
+    public string ShippingRating
+    {
+        get
+        {
+            return this.shippingRatingField;
+        }
+        set
+        {
+            this.shippingRatingField = value;
+        }
+    }
+
+    public string ServiceRating
+    {
+        get
+        {
+            return this.serviceRatingField;
+        }
+        set
+        {
+            this.serviceRatingField = value;
         }
     }
 }
