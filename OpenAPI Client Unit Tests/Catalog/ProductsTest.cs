@@ -8,19 +8,21 @@ namespace OpenAPI_Client_Unit_Tests.Catalog
     [TestClass]
     public class ProductsTest
     {
-        private OpenApiClient client = new OpenApiClient(Constants.API_KEY);
+        private readonly OpenApiClient _client = new OpenApiClient(Constants.ApiKey);
 
         [TestMethod]
         public void TestGetProduct()
         {
-            ProductsRequest productsRequest = new ProductsRequest();
-            productsRequest.Ids = new string[] { "1004004012288125" };
-            productsRequest.IncludeAttributes = true;
-            productsRequest.Offers = new EnumTypes.OfferType[] { 
+            var productsRequest = new ProductsRequest
+            {
+                Ids = new[] { "1004004012288125" },
+                IncludeAttributes = true,
+                Offers = new[] {
                     EnumTypes.OfferType.ALL
+            }
             };
 
-            ProductList productList = client.GetProducts(productsRequest);
+            var productList = _client.GetProducts(productsRequest);
             Assert.IsNotNull(productList.Products);
             Assert.IsTrue(productList.Products.Count == 1);
         }
@@ -28,14 +30,16 @@ namespace OpenAPI_Client_Unit_Tests.Catalog
         [TestMethod]
         public void TestGetProducts()
         {
-            ProductsRequest productsRequest = new ProductsRequest();
-            productsRequest.Ids = new string[] { "1004004012288125", "1004004012257956" };
-            productsRequest.IncludeAttributes = true;
-            productsRequest.Offers = new EnumTypes.OfferType[] { 
+            var productsRequest = new ProductsRequest
+            {
+                Ids = new[] { "1004004012288125", "1004004012257956" },
+                IncludeAttributes = true,
+                Offers = new[] {
                     EnumTypes.OfferType.ALL
+            }
             };
 
-            ProductList productList = client.GetProducts(productsRequest);
+            var productList = _client.GetProducts(productsRequest);
             Assert.IsNotNull(productList.Products);
             Assert.IsTrue(productList.Products.Count == 2);
         }

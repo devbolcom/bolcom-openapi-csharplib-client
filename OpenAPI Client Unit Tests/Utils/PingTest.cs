@@ -6,12 +6,12 @@ namespace OpenAPI_Client_Unit_Tests
     [TestClass]
     public class PingTest
     {
-        private OpenApiClient client = new OpenApiClient(Constants.API_KEY);
+        private readonly OpenApiClient _client = new OpenApiClient(Constants.ApiKey);
 
         [TestMethod]
         public void TestPing()
         {
-            Pong pong = client.Ping();
+            var pong = _client.Ping();
             Assert.IsNotNull(pong.Message);
         }
     }

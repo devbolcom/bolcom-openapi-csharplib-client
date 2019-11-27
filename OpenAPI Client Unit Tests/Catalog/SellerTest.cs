@@ -8,19 +8,21 @@ namespace OpenAPI_Client_Unit_Tests.Catalog
     [TestClass]
     public class SellerTest
     {
-        private OpenApiClient client = new OpenApiClient(Constants.API_KEY);
+        private readonly OpenApiClient _client = new OpenApiClient(Constants.ApiKey);
 
         [TestMethod]
         public void TestGetSellerList()
         {
-            SellerListRequest sellerListRequest = new SellerListRequest();
-            sellerListRequest.Id = "656476";
-            sellerListRequest.IncludeAttributes = true;
-            sellerListRequest.Offset = 0;
-            sellerListRequest.Limit = 10;
-            sellerListRequest.Sort = EnumTypes.SortingMethod.DATE_DESC;
+            var sellerListRequest = new SellerListRequest
+            {
+                Id = "1023995",
+                IncludeAttributes = true,
+                Offset = 0,
+                Limit = 10,
+                Sort = EnumTypes.SortingMethod.DATE_DESC
+            };
 
-            SellerList sellerList = client.GetSellerList(sellerListRequest);
+            var sellerList = _client.GetSellerList(sellerListRequest);
             Assert.IsNotNull(sellerList.Products);
             Assert.IsTrue(sellerList.Products.Count > 0);
         }

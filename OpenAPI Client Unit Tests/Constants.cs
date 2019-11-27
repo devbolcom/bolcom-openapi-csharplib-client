@@ -1,8 +1,7 @@
-﻿
-namespace OpenAPI_Client_Unit_Tests
+﻿namespace OpenAPI_Client_Unit_Tests
 {
-    class Constants
+    internal static class Constants
     {
-        public const string API_KEY = "";
+        public const string ApiKey = "8ADB2F6807AF4B67BDF2B2071B0FCD14";
     }
 }

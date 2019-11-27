@@ -8,27 +8,29 @@ namespace OpenAPI_Client_Unit_Tests
     [TestClass]
     public class BrowseTest
     {
-        private OpenApiClient client = new OpenApiClient(Constants.API_KEY);
+        private readonly OpenApiClient _client = new OpenApiClient(Constants.ApiKey);
 
         [TestMethod]
         public void TestBrowse()
         {
-            ListResultsRequest listResultsRequest = new ListResultsRequest();
-            listResultsRequest.Type = EnumTypes.ListType.DEFAULT;
-            listResultsRequest.CategoryId = "3135";
-            listResultsRequest.IncludeAttributes = true;
-            listResultsRequest.Offset = 10;
-            listResultsRequest.Limit = 10;
-            listResultsRequest.DataOutputs = new EnumTypes.DataOutputType[] { 
+            var listResultsRequest = new ListResultsRequest
+            {
+                Type = EnumTypes.ListType.DEFAULT,
+                CategoryId = "3135",
+                IncludeAttributes = true,
+                Offset = 10,
+                Limit = 10,
+                DataOutputs = new[] {
                     EnumTypes.DataOutputType.PRODUCTS,
                     EnumTypes.DataOutputType.CATEGORIES,
                     EnumTypes.DataOutputType.REFINEMENTS
-                };
-            listResultsRequest.Offers = new EnumTypes.OfferType[] { 
+                },
+                Offers = new[] {
                     EnumTypes.OfferType.ALL
-                };
+                }
+            };
 
-            ListResults listResults = client.Browse(listResultsRequest);
+            var listResults = _client.Browse(listResultsRequest);
             Assert.IsTrue(listResults.TotalResultSize > 0);
             Assert.IsNotNull(listResults.Categories);
             Assert.IsTrue(listResults.Categories.Count > 0);

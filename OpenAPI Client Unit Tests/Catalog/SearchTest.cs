@@ -8,26 +8,28 @@ namespace OpenAPI_Client_Unit_Tests
     [TestClass]
     public class SearchTest
     {
-        private OpenApiClient client = new OpenApiClient(Constants.API_KEY);
+        private readonly OpenApiClient _client = new OpenApiClient(Constants.ApiKey);
 
         [TestMethod]
         public void TestSearch()
         {
-            SearchResultsRequest searchResultsRequest = new SearchResultsRequest();
-            searchResultsRequest.Query = "halo";
-            searchResultsRequest.IncludeAttributes = true;
-            searchResultsRequest.Offset = 10;
-            searchResultsRequest.Limit = 10;
-            searchResultsRequest.DataOutputs = new EnumTypes.DataOutputType[] { 
+            var searchResultsRequest = new SearchResultsRequest
+            {
+                Query = "halo",
+                IncludeAttributes = true,
+                Offset = 10,
+                Limit = 10,
+                DataOutputs = new[] {
                     EnumTypes.DataOutputType.PRODUCTS,
                     EnumTypes.DataOutputType.CATEGORIES,
                     EnumTypes.DataOutputType.REFINEMENTS
-                };
-            searchResultsRequest.Offers = new EnumTypes.OfferType[] { 
+                },
+                Offers = new[] {
                     EnumTypes.OfferType.ALL
-                };
-            
-            SearchResults searchResults = client.Search(searchResultsRequest);
+                }
+            };
+
+            var searchResults = _client.Search(searchResultsRequest);
             Assert.IsTrue(searchResults.TotalResultSize > 0);
             Assert.IsNotNull(searchResults.Categories);
             Assert.IsTrue(searchResults.Categories.Count > 0);

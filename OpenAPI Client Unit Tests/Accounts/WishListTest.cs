@@ -6,50 +6,50 @@ namespace OpenAPI_Client_Unit_Tests
     [TestClass]
     public class WishListTest
     {
-        private OpenApiClient client = new OpenApiClient(Constants.API_KEY);
+        private readonly OpenApiClient _client = new OpenApiClient(Constants.ApiKey);
 
         [TestMethod]
         public void TestGetWishList()
         {
-            Session session = client.GetSession();
+            var session = _client.GetSession();
             Assert.IsNotNull(session.SessionId);
 
-            WishList wishList = client.GetWishList(session.SessionId);
+            var wishList = _client.GetWishList(session.SessionId);
             Assert.IsTrue(wishList.WishListItems.Count == 0);
         }
 
         [TestMethod]
         public void TestAddItemToWishList()
         {
-            Session session = client.GetSession();
+            var session = _client.GetSession();
             Assert.IsNotNull(session.SessionId);
 
-            WishList wishList = client.GetWishList(session.SessionId);
+            var wishList = _client.GetWishList(session.SessionId);
             Assert.IsTrue(wishList.WishListItems.Count == 0);
 
-            client.AddItemToWishList(session.SessionId, "1004004012288125");
+            _client.AddItemToWishList(session.SessionId, "1004004012288125");
 
-            wishList = client.GetWishList(session.SessionId);
+            wishList = _client.GetWishList(session.SessionId);
             Assert.IsTrue(wishList.WishListItems.Count == 1);
         }
 
         [TestMethod]
         public void TestRemoveItemFromWishList()
         {
-            Session session = client.GetSession();
+            var session = _client.GetSession();
             Assert.IsNotNull(session.SessionId);
 
-            WishList wishList = client.GetWishList(session.SessionId);
+            var wishList = _client.GetWishList(session.SessionId);
             Assert.IsTrue(wishList.WishListItems.Count == 0);
 
-            client.AddItemToWishList(session.SessionId, "1004004012288125");
+            _client.AddItemToWishList(session.SessionId, "1004004012288125");
 
-            wishList = client.GetWishList(session.SessionId);
+            wishList = _client.GetWishList(session.SessionId);
             Assert.IsTrue(wishList.WishListItems.Count == 1);
 
-            client.RemoveItemFromWishList(session.SessionId, wishList.WishListItems[0].Id);
+            _client.RemoveItemFromWishList(session.SessionId, wishList.WishListItems[0].Id);
 
-            wishList = client.GetWishList(session.SessionId);
+            wishList = _client.GetWishList(session.SessionId);
             Assert.IsTrue(wishList.WishListItems.Count == 0);
 
         }

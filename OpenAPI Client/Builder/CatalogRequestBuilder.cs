@@ -4,12 +4,14 @@ using System.Net;
 
 namespace Bol.OpenAPI.Util
 {
-    class CatalogRequestBuilder
+    internal static class CatalogRequestBuilder
     {
         public static HttpWebRequest ConstructSearchRequest(string apiKey, SearchResultsRequest searchResultsRequest)
         {
-            NameValueCollection queryParams = new NameValueCollection();
-            queryParams.Add("apikey", apiKey);
+            var queryParams = new NameValueCollection
+            {
+                { "apikey", apiKey }
+            };
 
             if (searchResultsRequest.Query != null)
             {
@@ -21,7 +23,7 @@ namespace Bol.OpenAPI.Util
             }
             if (searchResultsRequest.CategoryId != null || searchResultsRequest.RefinementIds != null)
             {
-                string ids = FormatterUtils.CombineCategoryAndRefinementIds(searchResultsRequest.CategoryId, searchResultsRequest.RefinementIds);
+                var ids = FormatterUtils.CombineCategoryAndRefinementIds(searchResultsRequest.CategoryId, searchResultsRequest.RefinementIds);
                 queryParams.Add("ids", ids);
             }
             if (searchResultsRequest.ListId != null)
@@ -57,9 +59,9 @@ namespace Bol.OpenAPI.Util
                 queryParams.Add("limit", searchResultsRequest.Limit.ToString().ToLower());
             }
 
-            string queryString = HttpUtils.ToQueryString(queryParams);
+            var queryString = HttpUtils.ToQueryString(queryParams);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/catalog/v4/search/" + queryString);
+            var request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/catalog/v4/search/" + queryString);
             request.Method = "GET";
             request.Accept = "application/json";
 
@@ -68,8 +70,10 @@ namespace Bol.OpenAPI.Util
 
         public static HttpWebRequest ConstructListRequest(string apiKey, ListResultsRequest listResultsRequest)
         {
-            NameValueCollection queryParams = new NameValueCollection();
-            queryParams.Add("apikey", apiKey);
+            var queryParams = new NameValueCollection
+            {
+                { "apikey", apiKey }
+            };
 
             if (listResultsRequest.Type != null)
             {
@@ -77,7 +81,7 @@ namespace Bol.OpenAPI.Util
             }
             if (listResultsRequest.CategoryId != null || listResultsRequest.RefinementIds != null)
             {
-                string ids = FormatterUtils.CombineCategoryAndRefinementIds(listResultsRequest.CategoryId, listResultsRequest.RefinementIds);
+                var ids = FormatterUtils.CombineCategoryAndRefinementIds(listResultsRequest.CategoryId, listResultsRequest.RefinementIds);
                 queryParams.Add("ids", ids);
             }
             if (listResultsRequest.ListId != null)
@@ -109,9 +113,9 @@ namespace Bol.OpenAPI.Util
                 queryParams.Add("limit", listResultsRequest.Limit.ToString().ToLower());
             }
 
-            string queryString = HttpUtils.ToQueryString(queryParams);
+            var queryString = HttpUtils.ToQueryString(queryParams);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/catalog/v4/lists/" + queryString);
+            var request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/catalog/v4/lists/" + queryString);
             request.Method = "GET";
             request.Accept = "application/json";
 
@@ -120,8 +124,10 @@ namespace Bol.OpenAPI.Util
 
         public static HttpWebRequest ConstructProductsRequest(string apiKey, ProductsRequest productsRequest)
         {
-            NameValueCollection queryParams = new NameValueCollection();
-            queryParams.Add("apikey", apiKey);
+            var queryParams = new NameValueCollection
+            {
+                { "apikey", apiKey }
+            };
 
             if (productsRequest.IncludeAttributes != null)
             {
@@ -132,50 +138,60 @@ namespace Bol.OpenAPI.Util
                 queryParams.Add("offers", FormatterUtils.FormatOffer(productsRequest.Offers));
             }
 
-            string queryString = HttpUtils.ToQueryString(queryParams);
+            var queryString = HttpUtils.ToQueryString(queryParams);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/catalog/v4/products/" + FormatterUtils.FormatIds(productsRequest.Ids) + "/" + queryString);
+            var request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/catalog/v4/products/" + FormatterUtils.FormatIds(productsRequest.Ids) + "/" + queryString);
             request.Method = "GET";
             request.Accept = "application/json";
 
             return request;
         }
 
-        public static HttpWebRequest ConstructSellerListRequest(string apiKey, SellerListRequest sellerListRequest)
-        {
-            NameValueCollection queryParams = new NameValueCollection();
-            queryParams.Add("apikey", apiKey);
+        ///// <summary>
+        ///// Constructs the seller list request.
+        ///// </summary>
+        ///// <param name="apiKey">The API key.</param>
+        ///// <param name="sellerListRequest">The seller list request.</param>
+        ///// <returns>A typed <seealso cref="HttpWebRequest"/></returns>
+        //public static HttpWebRequest ConstructSellerListRequest(string apiKey, SellerListRequest sellerListRequest)
+        //{
+        //    var queryParams = new NameValueCollection
+        //    {
+        //        { "apikey", apiKey }
+        //    };
 
-            if (sellerListRequest.IncludeAttributes != null)
-            {
-                queryParams.Add("includeattributes", sellerListRequest.IncludeAttributes.ToString().ToLower());
-            }
-            if (sellerListRequest.Sort != null)
-            {
-                queryParams.Add("sort", EnumUtils.StringValueOf(sellerListRequest.Sort));
-            }
-            if (sellerListRequest.Offset != null)
-            {
-                queryParams.Add("offset", sellerListRequest.Offset.ToString().ToLower());
-            }
-            if (sellerListRequest.Limit != null)
-            {
-                queryParams.Add("limit", sellerListRequest.Limit.ToString().ToLower());
-            }
+        //    if (sellerListRequest.IncludeAttributes != null)
+        //    {
+        //        queryParams.Add("includeattributes", sellerListRequest.IncludeAttributes.ToString().ToLower());
+        //    }
+        //    if (sellerListRequest.Sort != null)
+        //    {
+        //        queryParams.Add("sort", EnumUtils.StringValueOf(sellerListRequest.Sort));
+        //    }
+        //    if (sellerListRequest.Offset != null)
+        //    {
+        //        queryParams.Add("offset", sellerListRequest.Offset.ToString().ToLower());
+        //    }
+        //    if (sellerListRequest.Limit != null)
+        //    {
+        //        queryParams.Add("limit", sellerListRequest.Limit.ToString().ToLower());
+        //    }
 
-            string queryString = HttpUtils.ToQueryString(queryParams);
+        //    var queryString = HttpUtils.ToQueryString(queryParams);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/catalog/v4/sellerlists/" + sellerListRequest.Id + "/" + queryString);
-            request.Method = "GET";
-            request.Accept = "application/json";
+        //    var request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/catalog/v4/sellerlists/" + sellerListRequest.Id + "/" + queryString);
+        //    request.Method = "GET";
+        //    request.Accept = "application/json";
 
-            return request;
-        }
+        //    return request;
+        //}
 
         public static HttpWebRequest ConstructProductRecommendationsRequest(string apiKey, ProductRecommendationsRequest productRecommendationsRequest)
         {
-            NameValueCollection queryParams = new NameValueCollection();
-            queryParams.Add("apikey", apiKey);
+            var queryParams = new NameValueCollection
+            {
+                { "apikey", apiKey }
+            };
 
             if (productRecommendationsRequest.IncludeAttributes != null)
             {
@@ -190,9 +206,9 @@ namespace Bol.OpenAPI.Util
                 queryParams.Add("limit", productRecommendationsRequest.Limit.ToString().ToLower());
             }
 
-            string queryString = HttpUtils.ToQueryString(queryParams);
+            var queryString = HttpUtils.ToQueryString(queryParams);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/catalog/v4/recommendations/" + productRecommendationsRequest.Id + "/" + queryString);
+            var request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/catalog/v4/recommendations/" + productRecommendationsRequest.Id + "/" + queryString);
             request.Method = "GET";
             request.Accept = "application/json";
 
@@ -201,17 +217,19 @@ namespace Bol.OpenAPI.Util
 
         public static HttpWebRequest ConstructProductOffersRequest(string apiKey, ProductOffersRequest productOffersRequest)
         {
-            NameValueCollection queryParams = new NameValueCollection();
-            queryParams.Add("apikey", apiKey);
+            var queryParams = new NameValueCollection
+            {
+                { "apikey", apiKey }
+            };
 
             if (productOffersRequest.Offers != null)
             {
                 queryParams.Add("offers", FormatterUtils.FormatOffer(productOffersRequest.Offers));
-            }            
+            }
 
-            string queryString = HttpUtils.ToQueryString(queryParams);
+            var queryString = HttpUtils.ToQueryString(queryParams);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/catalog/v4/offers/" + productOffersRequest.Id + "/" + queryString);
+            var request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/catalog/v4/offers/" + productOffersRequest.Id + "/" + queryString);
             request.Method = "GET";
             request.Accept = "application/json";
 
@@ -220,17 +238,19 @@ namespace Bol.OpenAPI.Util
 
         public static HttpWebRequest ConstructRelatedProductsRequest(string apiKey, RelatedProductsRequest relatedProductsRequest)
         {
-            NameValueCollection queryParams = new NameValueCollection();
-            queryParams.Add("apikey", apiKey);
+            var queryParams = new NameValueCollection
+            {
+                { "apikey", apiKey }
+            };
 
             if (relatedProductsRequest.DataSet != null)
             {
                 queryParams.Add("dataset", FormatterUtils.FormatDataSet(relatedProductsRequest.DataSet));
             }
 
-            string queryString = HttpUtils.ToQueryString(queryParams);
+            var queryString = HttpUtils.ToQueryString(queryParams);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/catalog/v4/relatedproducts/" + relatedProductsRequest.Id + "/" + queryString);
+            var request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/catalog/v4/relatedproducts/" + relatedProductsRequest.Id + "/" + queryString);
             request.Method = "GET";
             request.Accept = "application/json";
 

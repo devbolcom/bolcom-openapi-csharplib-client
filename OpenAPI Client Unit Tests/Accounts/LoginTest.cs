@@ -6,13 +6,15 @@ namespace OpenAPI_Client_Unit_Tests
     [TestClass]
     public class LoginTest
     {
-        private OpenApiClient client = new OpenApiClient(Constants.API_KEY);
+        private readonly OpenApiClient _client = new OpenApiClient(Constants.ApiKey);
 
+        /// <summary>
+        /// Usage of this call is limited and only on request by email to developercenter@bol.com.
+        /// https://partnerblog.bol.com/documentatie/open-api/handleiding/api-requests/accounts/post-accountsv4login/
+        /// </summary>
         [TestMethod]
         public void TestLogin()
         {
-            // Insert proper private token that has user permission.
-
             //Login login = client.Login("", null);
             //Assert.IsNotNull(login.Name);
             //Assert.IsNotNull(login.SessionId);

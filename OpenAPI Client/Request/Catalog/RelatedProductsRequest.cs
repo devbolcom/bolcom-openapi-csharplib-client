@@ -4,10 +4,8 @@ namespace Bol.OpenAPI.Request.Catalog
 {
     public class RelatedProductsRequest
     {
-        public RelatedProductsRequest() { }
-
         public string Id { get; set; }
+
         public EnumTypes.DataSetType[] DataSet { get; set; }
-        
     }
 }

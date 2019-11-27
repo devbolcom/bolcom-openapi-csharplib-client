@@ -8,21 +8,23 @@ namespace OpenAPI_Client_Unit_Tests.Catalog
     [TestClass]
     public class ProductRecommendationsTest
     {
-        private OpenApiClient client = new OpenApiClient(Constants.API_KEY);
+        private readonly OpenApiClient _client = new OpenApiClient(Constants.ApiKey);
 
         [TestMethod]
         public void TestGetProductRecommendation()
         {
-            ProductRecommendationsRequest productRecommendationsRequest = new ProductRecommendationsRequest();
-            productRecommendationsRequest.Id = "1004004012288125";
-            productRecommendationsRequest.IncludeAttributes = true;
-            productRecommendationsRequest.Offers = new EnumTypes.OfferType[] { 
+            var productRecommendationsRequest = new ProductRecommendationsRequest
+            {
+                Id = "1004004012288125",
+                IncludeAttributes = true,
+                Offers = new[] {
                     EnumTypes.OfferType.ALL
+            },
+                Offset = 0,
+                Limit = 10
             };
-            productRecommendationsRequest.Offset = 0;
-            productRecommendationsRequest.Limit = 10;
 
-            ProductRecommendations productRecommendations = client.GetProductRecommendations(productRecommendationsRequest);
+            var productRecommendations = _client.GetProductRecommendations(productRecommendationsRequest);
             Assert.IsNotNull(productRecommendations.Products);
             Assert.IsTrue(productRecommendations.Products.Count > 0);
         }

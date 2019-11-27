@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Windows Desktop
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAPI Client", "OpenAPI Client\OpenAPI Client.csproj", "{C0018817-5853-4FBF-BE44-CBECB2589300}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.161
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenAPI Client", "OpenAPI Client\OpenAPI Client.csproj", "{C0018817-5853-4FBF-BE44-CBECB2589300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAPI Client Unit Tests", "OpenAPI Client Unit Tests\OpenAPI Client Unit Tests.csproj", "{A3D23BDF-4BCB-4F30-9C53-0F5DED290C5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenAPI Client Unit Tests", "OpenAPI Client Unit Tests\OpenAPI Client Unit Tests.csproj", "{2D251878-ABDC-401F-AFF2-A3163EE7BCF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,12 +17,15 @@ Global
 		{C0018817-5853-4FBF-BE44-CBECB2589300}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0018817-5853-4FBF-BE44-CBECB2589300}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0018817-5853-4FBF-BE44-CBECB2589300}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3D23BDF-4BCB-4F30-9C53-0F5DED290C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3D23BDF-4BCB-4F30-9C53-0F5DED290C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3D23BDF-4BCB-4F30-9C53-0F5DED290C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3D23BDF-4BCB-4F30-9C53-0F5DED290C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D251878-ABDC-401F-AFF2-A3163EE7BCF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D251878-ABDC-401F-AFF2-A3163EE7BCF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D251878-ABDC-401F-AFF2-A3163EE7BCF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D251878-ABDC-401F-AFF2-A3163EE7BCF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {032E093A-207E-4BB0-B9DD-7026C8D716C8}
 	EndGlobalSection
 EndGlobal
