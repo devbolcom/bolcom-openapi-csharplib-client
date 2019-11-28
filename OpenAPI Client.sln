@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E252C587-24FD-408D-8A5B-508EFCAC310F}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
 		OpenAPI Client.sln.DotSettings = OpenAPI Client.sln.DotSettings
 		README.md = README.md
 	EndProjectSection
