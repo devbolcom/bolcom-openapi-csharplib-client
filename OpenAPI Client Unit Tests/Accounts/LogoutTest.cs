@@ -1,4 +1,5 @@
-﻿using Bol.OpenAPI.Client;
+﻿using System.Threading.Tasks;
+using Bol.OpenAPI.Client;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OpenAPI_Client_Unit_Tests
@@ -13,11 +14,12 @@ namespace OpenAPI_Client_Unit_Tests
         /// https://partnerblog.bol.com/documentatie/open-api/handleiding/api-requests/accounts/post-accountsv4logout/
         /// </summary>
         [TestMethod]
-        public void TestLogout()
+        public async Task TestLogout()
         {
-            //var token = client.GetRequestAuthToken(null, null);
-            //var login = client.Login(token.PrivateToken, null);
-            //client.Logout(login.SessionId);
+            //var token = await client.GetRequestAuthTokenAsync(null, null);
+            //var login = await client.LoginAsync(token.PrivateToken, null);
+            //client.LogoutAsync(login.SessionId);
+            await Task.CompletedTask;
         }
     }
 }

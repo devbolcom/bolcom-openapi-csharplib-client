@@ -1,7 +1,6 @@
-﻿
-namespace Bol.OpenAPI
+﻿namespace Bol.OpenAPI.Client
 {
-    class Constants
+    internal static class Constants
     {
         public const string URL_PREFIX = "https://api.bol.com";
     }

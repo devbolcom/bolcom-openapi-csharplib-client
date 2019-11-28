@@ -1,15 +1,16 @@
-using System;
-using Bol.OpenAPI.Exception.Handler;
-using Bol.OpenAPI.Request.Catalog;
-using Bol.OpenAPI.Util;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.IO;
-using System.Net;
-using System.Text;
-
 namespace Bol.OpenAPI.Client
 {
+    using System;
+    using System.IO;
+    using System.Net;
+    using System.Text;
+    using System.Threading.Tasks;
+    using Bol.OpenAPI.Client.Builder;
+    using Bol.OpenAPI.Client.Exception.Handler;
+    using Bol.OpenAPI.Client.Request.Catalog;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+
     public class OpenApiClient
     {
         private readonly string _apiKey;
@@ -19,28 +20,28 @@ namespace Bol.OpenAPI.Client
             _apiKey = apiKey;
         }
 
-        public Pong Ping()
+        public async Task<Pong> PingAsync()
         {
             var request = UtilsRequestBuilder.ConstructPingRequest(_apiKey);
-            return ProcessBodylessRequest(request).ToObject<Pong>();
+            return (await ProcessBodylessRequestAsync(request).ConfigureAwait(false)).ToObject<Pong>();
         }
 
-        public SearchResults Search(SearchResultsRequest searchResultsRequest)
+        public async Task<SearchResults> SearchAsync(SearchResultsRequest searchResultsRequest)
         {
             var request = CatalogRequestBuilder.ConstructSearchRequest(_apiKey, searchResultsRequest);
-            return ProcessBodylessRequest(request).ToObject<SearchResults>();
+            return (await ProcessBodylessRequestAsync(request).ConfigureAwait(false)).ToObject<SearchResults>();
         }
 
-        public ListResults Browse(ListResultsRequest listResultsRequest)
+        public async Task<ListResults> BrowseAsync(ListResultsRequest listResultsRequest)
         {
             var request = CatalogRequestBuilder.ConstructListRequest(_apiKey, listResultsRequest);
-            return ProcessBodylessRequest(request).ToObject<ListResults>();
+            return (await ProcessBodylessRequestAsync(request).ConfigureAwait(false)).ToObject<ListResults>();
         }
 
-        public ProductList GetProducts(ProductsRequest productsRequest)
+        public async Task<ProductList> GetProductsAsync(ProductsRequest productsRequest)
         {
             var request = CatalogRequestBuilder.ConstructProductsRequest(_apiKey, productsRequest);
-            return ProcessBodylessRequest(request).ToObject<ProductList>();
+            return (await ProcessBodylessRequestAsync(request).ConfigureAwait(false)).ToObject<ProductList>();
         }
 
         ///// <summary>
@@ -52,94 +53,94 @@ namespace Bol.OpenAPI.Client
         //public SellerList GetSellerList(SellerListRequest sellerListRequest)
         //{
         //    var request = CatalogRequestBuilder.ConstructSellerListRequest(_apiKey, sellerListRequest);
-        //    return ProcessBodylessRequest(request).ToObject<SellerList>();
+        //    return (await ProcessBodylessRequest(request)).ToObject<SellerList>();
         //}
 
-        public ProductRecommendations GetProductRecommendations(ProductRecommendationsRequest productRecommendationsRequest)
+        public async Task<ProductRecommendations> GetProductRecommendationsAsync(ProductRecommendationsRequest productRecommendationsRequest)
         {
             var request = CatalogRequestBuilder.ConstructProductRecommendationsRequest(_apiKey, productRecommendationsRequest);
-            return ProcessBodylessRequest(request).ToObject<ProductRecommendations>();
+            return (await ProcessBodylessRequestAsync(request).ConfigureAwait(false)).ToObject<ProductRecommendations>();
         }
 
-        public ProductOffers GetProductOffers(ProductOffersRequest productOffersRequest)
+        public async Task<ProductOffers> GetProductOffersAsync(ProductOffersRequest productOffersRequest)
         {
             var request = CatalogRequestBuilder.ConstructProductOffersRequest(_apiKey, productOffersRequest);
-            return ProcessBodylessRequest(request).ToObject<ProductOffers>();
+            return (await ProcessBodylessRequestAsync(request).ConfigureAwait(false)).ToObject<ProductOffers>();
         }
 
-        public RelatedProducts GetRelatedProducts(RelatedProductsRequest relatedProductsRequest)
+        public async Task<RelatedProducts> GetRelatedProductsAsync(RelatedProductsRequest relatedProductsRequest)
         {
             var request = CatalogRequestBuilder.ConstructRelatedProductsRequest(_apiKey, relatedProductsRequest);
-            return ProcessBodylessRequest(request).ToObject<RelatedProducts>();
+            return (await ProcessBodylessRequestAsync(request).ConfigureAwait(false)).ToObject<RelatedProducts>();
         }
 
-        public Session GetSession()
+        public async Task<Session> GetSessionAsync()
         {
             var request = AccountsRequestBuilder.ConstructSessionRequest(_apiKey);
-            return ProcessBodylessRequest(request).ToObject<Session>();
+            return (await ProcessBodylessRequestAsync(request).ConfigureAwait(false)).ToObject<Session>();
         }
 
-        public RequestAuthToken GetRequestAuthToken(string successUrl, string errorUrl)
+        public async Task<RequestAuthToken> GetRequestAuthTokenAsync(string successUrl, string errorUrl)
         {
             var request = AccountsRequestBuilder.ConstructAuthTokenRequest(_apiKey, successUrl, errorUrl);
-            return ProcessBodylessRequest(request).ToObject<RequestAuthToken>();
+            return (await ProcessBodylessRequestAsync(request).ConfigureAwait(false)).ToObject<RequestAuthToken>();
         }
 
-        public Login Login(string privateToken, string sessionId)
+        public async Task<Login> LoginAsync(string privateToken, string sessionId)
         {
             var request = AccountsRequestBuilder.ConstructLoginRequest(_apiKey, privateToken, sessionId);
-            return ProcessBodylessRequest(request).ToObject<Login>();
+            return (await ProcessBodylessRequestAsync(request).ConfigureAwait(false)).ToObject<Login>();
         }
 
-        public void Logout(string sessionId)
+        public async Task LogoutAsync(string sessionId)
         {
             var request = AccountsRequestBuilder.ConstructLogoutRequest(_apiKey, sessionId);
-            ProcessBodylessRequest(request, false);
+            await ProcessBodylessRequestAsync(request, false).ConfigureAwait(false);
         }
 
-        public WishList GetWishList(string sessionId)
+        public async Task<WishList> GetWishListAsync(string sessionId)
         {
             var request = AccountsRequestBuilder.ConstructWishListRequest(_apiKey, sessionId);
-            return ProcessBodylessRequest(request).ToObject<WishList>();
+            return (await ProcessBodylessRequestAsync(request).ConfigureAwait(false)).ToObject<WishList>();
         }
 
-        public void AddItemToWishList(string sessionId, string productId)
+        public async Task AddItemToWishListAsync(string sessionId, string productId)
         {
             var request = AccountsRequestBuilder.ConstructWishListAddItemRequest(_apiKey, sessionId, productId);
-            ProcessBodylessRequest(request, false);
+            await ProcessBodylessRequestAsync(request, false).ConfigureAwait(false);
         }
 
-        public void RemoveItemFromWishList(string sessionId, string wishListItemId)
+        public async Task RemoveItemFromWishListAsync(string sessionId, string wishListItemId)
         {
             var request = AccountsRequestBuilder.ConstructWishListRemoveItemRequest(_apiKey, sessionId, wishListItemId);
-            ProcessBodylessRequest(request, false);
+            await ProcessBodylessRequestAsync(request, false).ConfigureAwait(false);
         }
 
-        public Basket GetBasket(string sessionId)
+        public async Task<Basket> GetBasketAsync(string sessionId)
         {
             var request = CheckoutRequestBuilder.ConstructBasketRequest(_apiKey, sessionId);
-            return ProcessBodylessRequest(request).ToObject<Basket>();
+            return (await ProcessBodylessRequestAsync(request).ConfigureAwait(false)).ToObject<Basket>();
         }
 
-        public void AddItemToBasket(string sessionId, string offerId, int quantity, string ipAddress)
+        public async Task AddItemToBasketAsync(string sessionId, string offerId, int quantity, string ipAddress)
         {
             var request = CheckoutRequestBuilder.ConstructBasketAddItemRequest(_apiKey, sessionId, offerId, quantity, ipAddress);
-            ProcessBodylessRequest(request, false);
+            await ProcessBodylessRequestAsync(request, false).ConfigureAwait(false);
         }
 
-        public void ChangeItemQuantityInBasket(string sessionId, string basketItemId, int quantity)
+        public async Task ChangeItemQuantityInBasketAsync(string sessionId, string basketItemId, int quantity)
         {
             var request = CheckoutRequestBuilder.ConstructBasketChangeItemQuantityRequest(_apiKey, sessionId, basketItemId, quantity);
-            ProcessBodylessRequest(request, false);
+            await ProcessBodylessRequestAsync(request, false).ConfigureAwait(false);
         }
 
-        public void RemoveItemFromBasket(string sessionId, string basketItemId)
+        public async Task RemoveItemFromBasketAsync(string sessionId, string basketItemId)
         {
             var request = CheckoutRequestBuilder.ConstructBasketRemoveItemQuantityRequest(_apiKey, sessionId, basketItemId);
-            ProcessBodylessRequest(request, false);
+            await ProcessBodylessRequestAsync(request, false).ConfigureAwait(false);
         }
 
-        private static JObject ProcessBodylessRequest(HttpWebRequest request, bool parseBody = true)
+        private static async Task<JObject> ProcessBodylessRequestAsync(HttpWebRequest request, bool parseBody = true)
         {
             JObject o = null;
 
@@ -149,28 +150,22 @@ namespace Bol.OpenAPI.Client
                 request.UserAgent = "bol.com API/4.0, 51c#_,,^..^,,_";
                 request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
 
-                response = (HttpWebResponse)request.GetResponse();
+                response = (HttpWebResponse)await request
+                    .GetResponseAsync()
+                    .ConfigureAwait(false);
+
                 if (HttpStatusCode.OK == response.StatusCode && parseBody)
                 {
-                    using (var stream = response.GetResponseStream())
-                    {
-                        var reader = new StreamReader(stream ?? throw new InvalidOperationException(), Encoding.UTF8);
-                        var responseString = reader.ReadToEnd();
-                        o = JsonConvert.DeserializeObject<JObject>(responseString);
-                    }
+                    using var stream = response.GetResponseStream();
+                    var reader = new StreamReader(stream ?? throw new InvalidOperationException(), Encoding.UTF8);
+                    var responseString = reader.ReadToEnd();
+                    o = JsonConvert.DeserializeObject<JObject>(responseString);
                 }
             }
-            catch (WebException e)
+            catch (WebException e) when (e.Response != null)
             {
-                if (e.Response != null)
-                {
-                    response = (HttpWebResponse)e.Response;
-                    throw ExceptionHandler.HandleBasicApiException(response);
-                }
-                else
-                {
-                    throw;
-                }
+                response = (HttpWebResponse)e.Response;
+                throw ExceptionHandler.HandleBasicApiException(response);
             }
             finally
             {

@@ -1,9 +1,10 @@
-﻿using Bol.OpenAPI.Request.Catalog;
-using System.Collections.Specialized;
-using System.Net;
-
-namespace Bol.OpenAPI.Util
+﻿namespace Bol.OpenAPI.Client.Builder
 {
+    using System.Collections.Specialized;
+    using System.Net;
+    using Bol.OpenAPI.Client.Request.Catalog;
+    using Bol.OpenAPI.Client.Util;
+
     internal static class CatalogRequestBuilder
     {
         public static HttpWebRequest ConstructSearchRequest(string apiKey, SearchResultsRequest searchResultsRequest)

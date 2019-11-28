@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Specialized;
-using System.Net;
-using System.Web;
-
-namespace Bol.OpenAPI.Util
+﻿namespace Bol.OpenAPI.Client.Util
 {
+    using System;
+    using System.Collections.Specialized;
+    using System.Net;
+    using System.Web;
+
     internal static class HttpUtils
     {
         public static string ToQueryString(NameValueCollection nvc)

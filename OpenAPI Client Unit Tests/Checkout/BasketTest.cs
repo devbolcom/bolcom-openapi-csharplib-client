@@ -1,7 +1,8 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using Bol.OpenAPI.Client;
-using Bol.OpenAPI.Request.Catalog;
-using Bol.OpenAPI.Request.Common;
+using Bol.OpenAPI.Client.Request.Catalog;
+using Bol.OpenAPI.Client.Request.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OpenAPI_Client_Unit_Tests
@@ -12,22 +13,22 @@ namespace OpenAPI_Client_Unit_Tests
         private readonly OpenApiClient _client = new OpenApiClient(Constants.ApiKey);
 
         [TestMethod]
-        public void TestGetBasket()
+        public async Task TestGetBasket()
         {
-            var session = _client.GetSession();
+            var session = await _client.GetSessionAsync();
             Assert.IsNotNull(session.SessionId);
 
-            var basket = _client.GetBasket(session.SessionId);
+            var basket = await _client.GetBasketAsync(session.SessionId);
             Assert.IsTrue(basket.BasketItems.Count == 0);
         }
 
         [TestMethod]
-        public void TestAddItemToBasket()
+        public async Task TestAddItemToBasket()
         {
-            var session = _client.GetSession();
+            var session = await _client.GetSessionAsync();
             Assert.IsNotNull(session.SessionId);
 
-            var basket = _client.GetBasket(session.SessionId);
+            var basket = await _client.GetBasketAsync(session.SessionId);
             Assert.IsTrue(basket.BasketItems.Count == 0);
 
             var productOffersRequest = new ProductOffersRequest
@@ -38,24 +39,24 @@ namespace OpenAPI_Client_Unit_Tests
                 }
             };
 
-            var productOffers = _client.GetProductOffers(productOffersRequest);
+            var productOffers = await _client.GetProductOffersAsync(productOffersRequest);
             Assert.IsNotNull(productOffers.OfferData);
             Assert.IsNotNull(productOffers.OfferData.Offers);
             Assert.IsTrue(productOffers.OfferData.Offers.Count > 0);
 
-            _client.AddItemToBasket(session.SessionId, productOffers.OfferData.Offers.First().Id, 1, "192.168.0.1");
+            await _client.AddItemToBasketAsync(session.SessionId, productOffers.OfferData.Offers.First().Id, 1, "192.168.0.1");
 
-            basket = _client.GetBasket(session.SessionId);
+            basket = await _client.GetBasketAsync(session.SessionId);
             Assert.IsTrue(basket.BasketItems.Count == 1);
         }
 
         [TestMethod]
-        public void TestChangeItemQuantityInBasket()
+        public async Task TestChangeItemQuantityInBasket()
         {
-            var session = _client.GetSession();
+            var session = await _client.GetSessionAsync();
             Assert.IsNotNull(session.SessionId);
 
-            var basket = _client.GetBasket(session.SessionId);
+            var basket = await _client.GetBasketAsync(session.SessionId);
             Assert.IsTrue(basket.BasketItems.Count == 0);
 
             var productOffersRequest = new ProductOffersRequest
@@ -66,31 +67,31 @@ namespace OpenAPI_Client_Unit_Tests
                 }
             };
 
-            var productOffers = _client.GetProductOffers(productOffersRequest);
+            var productOffers = await _client.GetProductOffersAsync(productOffersRequest);
             Assert.IsNotNull(productOffers.OfferData);
             Assert.IsNotNull(productOffers.OfferData.Offers);
             Assert.IsTrue(productOffers.OfferData.Offers.Count > 0);
 
-            _client.AddItemToBasket(session.SessionId, productOffers.OfferData.Offers.First().Id, 1, "192.168.0.1");
+            await _client.AddItemToBasketAsync(session.SessionId, productOffers.OfferData.Offers.First().Id, 1, "192.168.0.1");
 
-            basket = _client.GetBasket(session.SessionId);
+            basket = await _client.GetBasketAsync(session.SessionId);
             Assert.IsTrue(basket.BasketItems.Count == 1);
             Assert.IsTrue(basket.BasketItems[0].Quantity == 1);
 
-            _client.ChangeItemQuantityInBasket(session.SessionId, basket.BasketItems[0].Id, 2);
+            await _client.ChangeItemQuantityInBasketAsync(session.SessionId, basket.BasketItems[0].Id, 2);
 
-            basket = _client.GetBasket(session.SessionId);
+            basket = await _client.GetBasketAsync(session.SessionId);
             Assert.IsTrue(basket.BasketItems.Count == 1);
             Assert.IsTrue(basket.BasketItems[0].Quantity == 2);
         }
 
         [TestMethod]
-        public void TestRemoveItemFromBasket()
+        public async Task TestRemoveItemFromBasket()
         {
-            var session = _client.GetSession();
+            var session = await _client.GetSessionAsync();
             Assert.IsNotNull(session.SessionId);
 
-            var basket = _client.GetBasket(session.SessionId);
+            var basket = await _client.GetBasketAsync(session.SessionId);
             Assert.IsTrue(basket.BasketItems.Count == 0);
 
             var productOffersRequest = new ProductOffersRequest
@@ -101,19 +102,19 @@ namespace OpenAPI_Client_Unit_Tests
                 }
             };
 
-            var productOffers = _client.GetProductOffers(productOffersRequest);
+            var productOffers = await _client.GetProductOffersAsync(productOffersRequest);
             Assert.IsNotNull(productOffers.OfferData);
             Assert.IsNotNull(productOffers.OfferData.Offers);
             Assert.IsTrue(productOffers.OfferData.Offers.Count > 0);
 
-            _client.AddItemToBasket(session.SessionId, productOffers.OfferData.Offers.First().Id, 1, "192.168.0.1");
+            await _client.AddItemToBasketAsync(session.SessionId, productOffers.OfferData.Offers.First().Id, 1, "192.168.0.1");
 
-            basket = _client.GetBasket(session.SessionId);
+            basket = await _client.GetBasketAsync(session.SessionId);
             Assert.IsTrue(basket.BasketItems.Count == 1);
 
-            _client.RemoveItemFromBasket(session.SessionId, basket.BasketItems[0].Id);
+            await _client.RemoveItemFromBasketAsync(session.SessionId, basket.BasketItems[0].Id);
 
-            basket = _client.GetBasket(session.SessionId);
+            basket = await _client.GetBasketAsync(session.SessionId);
             Assert.IsTrue(basket.BasketItems.Count == 0);
         }
     }

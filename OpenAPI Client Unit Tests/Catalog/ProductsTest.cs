@@ -1,6 +1,7 @@
-﻿using Bol.OpenAPI.Client;
-using Bol.OpenAPI.Request.Catalog;
-using Bol.OpenAPI.Request.Common;
+﻿using System.Threading.Tasks;
+using Bol.OpenAPI.Client;
+using Bol.OpenAPI.Client.Request.Catalog;
+using Bol.OpenAPI.Client.Request.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OpenAPI_Client_Unit_Tests.Catalog
@@ -11,7 +12,7 @@ namespace OpenAPI_Client_Unit_Tests.Catalog
         private readonly OpenApiClient _client = new OpenApiClient(Constants.ApiKey);
 
         [TestMethod]
-        public void TestGetProduct()
+        public async Task TestGetProduct()
         {
             var productsRequest = new ProductsRequest
             {
@@ -22,13 +23,13 @@ namespace OpenAPI_Client_Unit_Tests.Catalog
             }
             };
 
-            var productList = _client.GetProducts(productsRequest);
+            var productList = await _client.GetProductsAsync(productsRequest);
             Assert.IsNotNull(productList.Products);
             Assert.IsTrue(productList.Products.Count == 1);
         }
 
         [TestMethod]
-        public void TestGetProducts()
+        public async Task TestGetProducts()
         {
             var productsRequest = new ProductsRequest
             {
@@ -39,7 +40,7 @@ namespace OpenAPI_Client_Unit_Tests.Catalog
             }
             };
 
-            var productList = _client.GetProducts(productsRequest);
+            var productList = await _client.GetProductsAsync(productsRequest);
             Assert.IsNotNull(productList.Products);
             Assert.IsTrue(productList.Products.Count == 2);
         }

@@ -1,9 +1,9 @@
-﻿using Bol.OpenAPI.Request.Common;
-using System.Text;
-
-namespace Bol.OpenAPI.Util
+﻿namespace Bol.OpenAPI.Client.Util
 {
-    class FormatterUtils
+    using System.Text;
+    using Bol.OpenAPI.Client.Request.Common;
+
+    internal static class FormatterUtils
     {
         public static string CombineCategoryAndRefinementIds(string categoryId, string[] refinementIds)
         {

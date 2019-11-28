@@ -1,8 +1,8 @@
-﻿using System;
-using System.ComponentModel;
-
-namespace Bol.OpenAPI.Util
+﻿namespace Bol.OpenAPI.Client.Util
 {
+    using System;
+    using System.ComponentModel;
+
     public static class EnumUtils
     {
         public static string StringValueOf(Enum value)

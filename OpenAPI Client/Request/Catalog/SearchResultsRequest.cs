@@ -1,7 +1,7 @@
-﻿using Bol.OpenAPI.Request.Common;
-
-namespace Bol.OpenAPI.Request.Catalog
+﻿namespace Bol.OpenAPI.Client.Request.Catalog
 {
+    using Bol.OpenAPI.Client.Request.Common;
+
     public class SearchResultsRequest
     {
         public string Query { get; set; }

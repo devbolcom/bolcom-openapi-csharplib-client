@@ -1,4 +1,4 @@
-﻿namespace Bol.OpenAPI.Exception
+﻿namespace Bol.OpenAPI.Client
 {
     public class BasicApiException
         : System.ApplicationException

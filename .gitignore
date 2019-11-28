@@ -2,10 +2,9 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/OpenAPI Client
-/OpenAPI Client/bin/Debug/netstandard2.0
+*.user
+/.vs
+/OpenAPI Client/bin
 /OpenAPI Client/obj
-/OpenAPI Client/OpenAPI Client.csproj.user
-/OpenAPI Client Unit Tests/bin/Debug/netcoreapp3.0
+/OpenAPI Client Unit Tests/bin
 /OpenAPI Client Unit Tests/obj
-/OpenAPI Client Unit Tests/OpenAPI Client Unit Tests.csproj.user

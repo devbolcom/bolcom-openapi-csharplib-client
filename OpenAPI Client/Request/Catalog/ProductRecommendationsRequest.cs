@@ -1,8 +1,7 @@
-﻿using Bol.OpenAPI.Request.Common;
-using System;
-
-namespace Bol.OpenAPI.Request.Catalog
+﻿namespace Bol.OpenAPI.Client.Request.Catalog
 {
+    using Bol.OpenAPI.Client.Request.Common;
+
     public class ProductRecommendationsRequest
     {
         public string Id { get; set; }

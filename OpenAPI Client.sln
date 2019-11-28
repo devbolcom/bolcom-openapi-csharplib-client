@@ -7,6 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenAPI Client", "OpenAPI C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenAPI Client Unit Tests", "OpenAPI Client Unit Tests\OpenAPI Client Unit Tests.csproj", "{2D251878-ABDC-401F-AFF2-A3163EE7BCF8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E252C587-24FD-408D-8A5B-508EFCAC310F}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		OpenAPI Client.sln.DotSettings = OpenAPI Client.sln.DotSettings
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

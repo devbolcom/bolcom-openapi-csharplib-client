@@ -1,6 +1,7 @@
-﻿using Bol.OpenAPI.Client;
-using Bol.OpenAPI.Request.Catalog;
-using Bol.OpenAPI.Request.Common;
+﻿using System.Threading.Tasks;
+using Bol.OpenAPI.Client;
+using Bol.OpenAPI.Client.Request.Catalog;
+using Bol.OpenAPI.Client.Request.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OpenAPI_Client_Unit_Tests.Catalog
@@ -11,7 +12,7 @@ namespace OpenAPI_Client_Unit_Tests.Catalog
         private readonly OpenApiClient _client = new OpenApiClient(Constants.ApiKey);
 
         [TestMethod]
-        public void TestGetProductFamilies()
+        public async Task TestGetProductFamilies()
         {
             var relatedProductsRequest = new RelatedProductsRequest
             {
@@ -21,7 +22,7 @@ namespace OpenAPI_Client_Unit_Tests.Catalog
             }
             };
 
-            var relatedProducts = _client.GetRelatedProducts(relatedProductsRequest);
+            var relatedProducts = await _client.GetRelatedProductsAsync(relatedProductsRequest);
             Assert.IsNotNull(relatedProducts.ProductFamilies);
             Assert.IsTrue(relatedProducts.ProductFamilies.Count > 0);
         }
@@ -30,7 +31,7 @@ namespace OpenAPI_Client_Unit_Tests.Catalog
         /// This method returns API error
         /// </summary>
         [TestMethod]
-        public void TestGetAccessories()
+        public async Task TestGetAccessories()
         {
             //var relatedProductsRequest = new RelatedProductsRequest
             //{
@@ -43,6 +44,7 @@ namespace OpenAPI_Client_Unit_Tests.Catalog
             //var relatedProducts = client.GetRelatedProducts(relatedProductsRequest);
             //Assert.IsNotNull(relatedProducts.Accessories);
             //Assert.IsTrue(relatedProducts.Accessories.Count > 0);
+            await Task.CompletedTask;
         }
     }
 }

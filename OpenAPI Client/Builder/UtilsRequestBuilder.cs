@@ -1,8 +1,9 @@
-﻿using System.Collections.Specialized;
-using System.Net;
-
-namespace Bol.OpenAPI.Util
+﻿namespace Bol.OpenAPI.Client.Builder
 {
+    using System.Collections.Specialized;
+    using System.Net;
+    using Bol.OpenAPI.Client.Util;
+
     internal static class UtilsRequestBuilder
     {
         public static HttpWebRequest ConstructPingRequest(string apiKey)

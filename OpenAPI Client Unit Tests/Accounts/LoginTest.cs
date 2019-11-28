@@ -1,4 +1,5 @@
-﻿using Bol.OpenAPI.Client;
+﻿using System.Threading.Tasks;
+using Bol.OpenAPI.Client;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OpenAPI_Client_Unit_Tests
@@ -13,11 +14,12 @@ namespace OpenAPI_Client_Unit_Tests
         /// https://partnerblog.bol.com/documentatie/open-api/handleiding/api-requests/accounts/post-accountsv4login/
         /// </summary>
         [TestMethod]
-        public void TestLogin()
+        public async Task TestLogin()
         {
             //Login login = client.Login("", null);
             //Assert.IsNotNull(login.Name);
             //Assert.IsNotNull(login.SessionId);
+            await Task.CompletedTask;
         }
     }
 }

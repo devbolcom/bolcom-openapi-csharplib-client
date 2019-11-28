@@ -1,4 +1,5 @@
-﻿using Bol.OpenAPI.Client;
+﻿using System.Threading.Tasks;
+using Bol.OpenAPI.Client;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OpenAPI_Client_Unit_Tests
@@ -9,9 +10,9 @@ namespace OpenAPI_Client_Unit_Tests
         private readonly OpenApiClient _client = new OpenApiClient(Constants.ApiKey);
 
         [TestMethod]
-        public void TestGetSession()
+        public async Task TestGetSession()
         {
-            var session = _client.GetSession();
+            var session = await _client.GetSessionAsync();
             Assert.IsNotNull(session.SessionId);
         }
     }

@@ -1,7 +1,7 @@
-﻿using System.ComponentModel;
-
-namespace Bol.OpenAPI.Request.Common
+﻿namespace Bol.OpenAPI.Client.Request.Common
 {
+    using System.ComponentModel;
+
     public static class EnumTypes
     {
         public enum SortingMethod

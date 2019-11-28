@@ -1,6 +1,7 @@
-﻿using Bol.OpenAPI.Client;
-using Bol.OpenAPI.Request.Catalog;
-using Bol.OpenAPI.Request.Common;
+﻿using System.Threading.Tasks;
+using Bol.OpenAPI.Client;
+using Bol.OpenAPI.Client.Request.Catalog;
+using Bol.OpenAPI.Client.Request.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OpenAPI_Client_Unit_Tests
@@ -11,7 +12,7 @@ namespace OpenAPI_Client_Unit_Tests
         private readonly OpenApiClient _client = new OpenApiClient(Constants.ApiKey);
 
         [TestMethod]
-        public void TestSearch()
+        public async Task TestSearch()
         {
             var searchResultsRequest = new SearchResultsRequest
             {
@@ -29,7 +30,7 @@ namespace OpenAPI_Client_Unit_Tests
                 }
             };
 
-            var searchResults = _client.Search(searchResultsRequest);
+            var searchResults = await _client.SearchAsync(searchResultsRequest);
             Assert.IsTrue(searchResults.TotalResultSize > 0);
             Assert.IsNotNull(searchResults.Categories);
             Assert.IsTrue(searchResults.Categories.Count > 0);
