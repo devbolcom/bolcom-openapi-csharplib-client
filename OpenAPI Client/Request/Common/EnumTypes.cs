@@ -1,96 +1,123 @@
-﻿using System.ComponentModel;
-
-namespace Bol.OpenAPI.Request.Common
+﻿namespace Bol.OpenAPI.Client.Request.Common
 {
-    public class EnumTypes
+    using System.ComponentModel;
+
+    public static class EnumTypes
     {
         public enum SortingMethod
         {
-            [DescriptionAttribute("rankasc")]
+            [Description("rankasc")]
             RANK_ASC,
-            [DescriptionAttribute("rankdesc")]
+
+            [Description("rankdesc")]
             RANK_DESC,
-            [DescriptionAttribute("priceasc")]
+
+            [Description("priceasc")]
             PRICE_ASC,
-            [DescriptionAttribute("pricedesc")]
+
+            [Description("pricedesc")]
             PRICE_DESC,
-            [DescriptionAttribute("titleasc")]
+
+            [Description("titleasc")]
             TITLE_ASC,
-            [DescriptionAttribute("titledesc")]
+
+            [Description("titledesc")]
             TITLE_DESC,
-            [DescriptionAttribute("dateasc")]
+
+            [Description("dateasc")]
             DATE_ASC,
-            [DescriptionAttribute("datedesc")]
+
+            [Description("datedesc")]
             DATE_DESC,
-            [DescriptionAttribute("ratingasc")]
+
+            [Description("ratingasc")]
             RATING_ASC,
-            [DescriptionAttribute("ratingdesc")]
+
+            [Description("ratingdesc")]
             RATING_DESC
         }
 
         public enum DataOutputType
         {
-            [DescriptionAttribute("products")]
+            [Description("products")]
             PRODUCTS,
-            [DescriptionAttribute("categories")]
+
+            [Description("categories")]
             CATEGORIES,
-            [DescriptionAttribute("refinements")]
+
+            [Description("refinements")]
             REFINEMENTS
         }
 
         public enum OfferType
         {
-            [DescriptionAttribute("cheapest")]
+            [Description("cheapest")]
             CHEAPEST,
-            [DescriptionAttribute("secondhand")]
+
+            [Description("secondhand")]
             SECOND_HAND,
-            [DescriptionAttribute("plazanew")]
+
+            [Description("plazanew")]
             PLAZA_NEW,
-            [DescriptionAttribute("bolcom")]
+
+            [Description("bolcom")]
             BOL_COM,
-            [DescriptionAttribute("all")]
+
+            [Description("all")]
             ALL
         }
 
         public enum ListType
         {
-            [DescriptionAttribute("toplist_default")]
+            [Description("toplist_default")]
             DEFAULT,
-            [DescriptionAttribute("toplist_overall")]
+
+            [Description("toplist_overall")]
             OVERALL,
-            [DescriptionAttribute("toplist_last_week")]
+
+            [Description("toplist_last_week")]
             LAST_WEEK,
-            [DescriptionAttribute("toplist_last_two_months")]
+
+            [Description("toplist_last_two_months")]
             LAST_TWO_MONTHS,
-            [DescriptionAttribute("new")]
+
+            [Description("new")]
             NEW,
-            [DescriptionAttribute("preorder")]
+
+            [Description("preorder")]
             PREORDER
         }
 
         public enum FieldType
         {
-            [DescriptionAttribute("author")]
+            [Description("author")]
             AUTHOR,
-            [DescriptionAttribute("artist")]
+
+            [Description("artist")]
             ARTIST,
-            [DescriptionAttribute("title")]
+
+            [Description("title")]
             TITLE,
-            [DescriptionAttribute("brand")]
+
+            [Description("brand")]
             BRAND,
-            [DescriptionAttribute("songtitle")]
+
+            [Description("songtitle")]
             SONG_TITLE,
-            [DescriptionAttribute("actor")]
+
+            [Description("actor")]
             ACTOR,
-            [DescriptionAttribute("director")]
+
+            [Description("director")]
             DIRECTOR
         }
 
         public enum DataSetType
         {
-            [DescriptionAttribute("productfamily")]
+            [Description("productfamily")]
             PRODUCT_FAMILY,
-            [DescriptionAttribute("accessories")]
+
+            [Description("accessories")]
             ACCESSORIES
         }
     }

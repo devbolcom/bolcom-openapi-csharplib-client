@@ -1,41 +1,44 @@
-﻿using Bol.OpenAPI.Client;
-using Bol.OpenAPI.Request.Catalog;
-using Bol.OpenAPI.Request.Common;
+﻿using System.Threading.Tasks;
+using Bol.OpenAPI.Client.Request.Catalog;
+using Bol.OpenAPI.Client.Request.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OpenAPI_Client_Unit_Tests.Catalog
 {
     [TestClass]
     public class ProductsTest
+        : ConfiguredTestBase
     {
-        private OpenApiClient client = new OpenApiClient(Constants.API_KEY);
-
         [TestMethod]
-        public void TestGetProduct()
+        public async Task TestGetProduct()
         {
-            ProductsRequest productsRequest = new ProductsRequest();
-            productsRequest.Ids = new string[] { "1004004012288125" };
-            productsRequest.IncludeAttributes = true;
-            productsRequest.Offers = new EnumTypes.OfferType[] { 
+            var productsRequest = new ProductsRequest
+            {
+                Ids = new[] { "1004004012288125" },
+                IncludeAttributes = true,
+                Offers = new[] {
                     EnumTypes.OfferType.ALL
+            }
             };
 
-            ProductList productList = client.GetProducts(productsRequest);
+            var productList = await _client.GetProductsAsync(productsRequest);
             Assert.IsNotNull(productList.Products);
             Assert.IsTrue(productList.Products.Count == 1);
         }
 
         [TestMethod]
-        public void TestGetProducts()
+        public async Task TestGetProducts()
         {
-            ProductsRequest productsRequest = new ProductsRequest();
-            productsRequest.Ids = new string[] { "1004004012288125", "1004004012257956" };
-            productsRequest.IncludeAttributes = true;
-            productsRequest.Offers = new EnumTypes.OfferType[] { 
+            var productsRequest = new ProductsRequest
+            {
+                Ids = new[] { "1004004012288125", "1004004012257956" },
+                IncludeAttributes = true,
+                Offers = new[] {
                     EnumTypes.OfferType.ALL
+            }
             };
 
-            ProductList productList = client.GetProducts(productsRequest);
+            var productList = await _client.GetProductsAsync(productsRequest);
             Assert.IsNotNull(productList.Products);
             Assert.IsTrue(productList.Products.Count == 2);
         }

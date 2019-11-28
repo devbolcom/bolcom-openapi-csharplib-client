@@ -1,13 +1,13 @@
-﻿using Bol.OpenAPI.Request.Common;
-using System.Text;
-
-namespace Bol.OpenAPI.Util
+﻿namespace Bol.OpenAPI.Client.Util
 {
-    class FormatterUtils
+    using System.Text;
+    using Bol.OpenAPI.Client.Request.Common;
+
+    internal static class FormatterUtils
     {
         public static string CombineCategoryAndRefinementIds(string categoryId, string[] refinementIds)
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             if (categoryId != null)
             {
                 sb.Append(categoryId);
@@ -16,7 +16,7 @@ namespace Bol.OpenAPI.Util
             {
                 sb.Append(',');
 
-                for (int i = 0; i < refinementIds.Length; i++)
+                for (var i = 0; i < refinementIds.Length; i++)
                 {
                     sb.Append(refinementIds[i]);
 
@@ -32,10 +32,10 @@ namespace Bol.OpenAPI.Util
 
         public static string FormatIds(string[] ids)
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             if (ids != null)
             {
-                for (int i = 0; i < ids.Length; i++)
+                for (var i = 0; i < ids.Length; i++)
                 {
                     sb.Append(ids[i]);
 
@@ -51,10 +51,10 @@ namespace Bol.OpenAPI.Util
 
         public static string FormatDataOutput(EnumTypes.DataOutputType[] dataOutputs)
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             if (dataOutputs != null)
             {
-                for (int i = 0; i < dataOutputs.Length; i++)
+                for (var i = 0; i < dataOutputs.Length; i++)
                 {
                     sb.Append(EnumUtils.StringValueOf(dataOutputs[i]));
 
@@ -70,11 +70,11 @@ namespace Bol.OpenAPI.Util
 
         public static string FormatOffer(EnumTypes.OfferType[] offers)
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             if (offers != null)
             {
 
-                for (int i = 0; i < offers.Length; i++)
+                for (var i = 0; i < offers.Length; i++)
                 {
                     sb.Append(EnumUtils.StringValueOf(offers[i]));
 
@@ -90,11 +90,11 @@ namespace Bol.OpenAPI.Util
 
         public static string FormatDataSet(EnumTypes.DataSetType[] dataSet)
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             if (dataSet != null)
             {
 
-                for (int i = 0; i < dataSet.Length; i++)
+                for (var i = 0; i < dataSet.Length; i++)
                 {
                     sb.Append(EnumUtils.StringValueOf(dataSet[i]));
 

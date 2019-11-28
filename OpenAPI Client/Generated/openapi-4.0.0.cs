@@ -20,11 +20,11 @@ public partial class Login
     {
         get
         {
-            return this.sessionIdField;
+            return sessionIdField;
         }
         set
         {
-            this.sessionIdField = value;
+            sessionIdField = value;
         }
     }
 
@@ -32,11 +32,11 @@ public partial class Login
     {
         get
         {
-            return this.nameField;
+            return nameField;
         }
         set
         {
-            this.nameField = value;
+            nameField = value;
         }
     }
 
@@ -44,11 +44,11 @@ public partial class Login
     {
         get
         {
-            return this.mergedBasketField;
+            return mergedBasketField;
         }
         set
         {
-            this.mergedBasketField = value;
+            mergedBasketField = value;
         }
     }
 }
@@ -66,11 +66,11 @@ public partial class RequestAuthToken
     {
         get
         {
-            return this.privateTokenField;
+            return privateTokenField;
         }
         set
         {
-            this.privateTokenField = value;
+            privateTokenField = value;
         }
     }
 
@@ -78,11 +78,11 @@ public partial class RequestAuthToken
     {
         get
         {
-            return this.codeField;
+            return codeField;
         }
         set
         {
-            this.codeField = value;
+            codeField = value;
         }
     }
 
@@ -90,11 +90,11 @@ public partial class RequestAuthToken
     {
         get
         {
-            return this.urlField;
+            return urlField;
         }
         set
         {
-            this.urlField = value;
+            urlField = value;
         }
     }
 }
@@ -108,11 +108,11 @@ public partial class Session
     {
         get
         {
-            return this.sessionIdField;
+            return sessionIdField;
         }
         set
         {
-            this.sessionIdField = value;
+            sessionIdField = value;
         }
     }
 }
@@ -124,18 +124,18 @@ public partial class ProductList
 
     public ProductList()
     {
-        this.productsField = new List<Product>();
+        productsField = new List<Product>();
     }
 
     public List<Product> Products
     {
         get
         {
-            return this.productsField;
+            return productsField;
         }
         set
         {
-            this.productsField = value;
+            productsField = value;
         }
     }
 }
@@ -183,26 +183,26 @@ public partial class Product
 
     public Product()
     {
-        this.parentCategoryPathsField = new List<ParentCategory>();
-        this.promotionsField = new List<Promotion>();
-        this.offerDataField = new OfferData();
-        this.mediaField = new List<MediaEntry>();
-        this.imagesField = new List<MediaEntry>();
-        this.urlsField = new List<Entry>();
-        this.entityGroupsField = new List<EntityGroup>();
-        this.attributeGroupsField = new List<AttributeGroup>();
-        this.trackListsField = new List<TrackList>();
+        parentCategoryPathsField = new List<ParentCategory>();
+        promotionsField = new List<Promotion>();
+        offerDataField = new OfferData();
+        mediaField = new List<MediaEntry>();
+        imagesField = new List<MediaEntry>();
+        urlsField = new List<Entry>();
+        entityGroupsField = new List<EntityGroup>();
+        attributeGroupsField = new List<AttributeGroup>();
+        trackListsField = new List<TrackList>();
     }
 
     public string Id
     {
         get
         {
-            return this.idField;
+            return idField;
         }
         set
         {
-            this.idField = value;
+            idField = value;
         }
     }
 
@@ -210,11 +210,11 @@ public partial class Product
     {
         get
         {
-            return this.eANField;
+            return eANField;
         }
         set
         {
-            this.eANField = value;
+            eANField = value;
         }
     }
 
@@ -222,11 +222,11 @@ public partial class Product
     {
         get
         {
-            return this.gPCField;
+            return gPCField;
         }
         set
         {
-            this.gPCField = value;
+            gPCField = value;
         }
     }
 
@@ -234,11 +234,11 @@ public partial class Product
     {
         get
         {
-            return this.titleField;
+            return titleField;
         }
         set
         {
-            this.titleField = value;
+            titleField = value;
         }
     }
 
@@ -246,11 +246,11 @@ public partial class Product
     {
         get
         {
-            return this.subtitleField;
+            return subtitleField;
         }
         set
         {
-            this.subtitleField = value;
+            subtitleField = value;
         }
     }
 
@@ -258,11 +258,11 @@ public partial class Product
     {
         get
         {
-            return this.summaryField;
+            return summaryField;
         }
         set
         {
-            this.summaryField = value;
+            summaryField = value;
         }
     }
 
@@ -270,24 +270,24 @@ public partial class Product
     {
         get
         {
-            return this.ratingField;
+            return ratingField;
         }
         set
         {
-            this.ratingField = value;
+            ratingField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool RatingSpecified
     {
         get
         {
-            return this.ratingFieldSpecified;
+            return ratingFieldSpecified;
         }
         set
         {
-            this.ratingFieldSpecified = value;
+            ratingFieldSpecified = value;
         }
     }
 
@@ -295,11 +295,11 @@ public partial class Product
     {
         get
         {
-            return this.shortDescriptionField;
+            return shortDescriptionField;
         }
         set
         {
-            this.shortDescriptionField = value;
+            shortDescriptionField = value;
         }
     }
 
@@ -307,11 +307,11 @@ public partial class Product
     {
         get
         {
-            return this.longDescriptionField;
+            return longDescriptionField;
         }
         set
         {
-            this.longDescriptionField = value;
+            longDescriptionField = value;
         }
     }
 
@@ -319,11 +319,11 @@ public partial class Product
     {
         get
         {
-            return this.trackListsField;
+            return trackListsField;
         }
         set
         {
-            this.trackListsField = value;
+            trackListsField = value;
         }
     }
 
@@ -331,11 +331,11 @@ public partial class Product
     {
         get
         {
-            return this.attributeGroupsField;
+            return attributeGroupsField;
         }
         set
         {
-            this.attributeGroupsField = value;
+            attributeGroupsField = value;
         }
     }
 
@@ -343,11 +343,11 @@ public partial class Product
     {
         get
         {
-            return this.entityGroupsField;
+            return entityGroupsField;
         }
         set
         {
-            this.entityGroupsField = value;
+            entityGroupsField = value;
         }
     }
 
@@ -355,11 +355,11 @@ public partial class Product
     {
         get
         {
-            return this.urlsField;
+            return urlsField;
         }
         set
         {
-            this.urlsField = value;
+            urlsField = value;
         }
     }
 
@@ -367,11 +367,11 @@ public partial class Product
     {
         get
         {
-            return this.imagesField;
+            return imagesField;
         }
         set
         {
-            this.imagesField = value;
+            imagesField = value;
         }
     }
 
@@ -379,11 +379,11 @@ public partial class Product
     {
         get
         {
-            return this.mediaField;
+            return mediaField;
         }
         set
         {
-            this.mediaField = value;
+            mediaField = value;
         }
     }
 
@@ -391,11 +391,11 @@ public partial class Product
     {
         get
         {
-            return this.offerDataField;
+            return offerDataField;
         }
         set
         {
-            this.offerDataField = value;
+            offerDataField = value;
         }
     }
 
@@ -403,25 +403,25 @@ public partial class Product
     {
         get
         {
-            return this.promotionsField;
+            return promotionsField;
         }
         set
         {
-            this.promotionsField = value;
+            promotionsField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlArrayAttribute(Order = 17)]
-    [System.Xml.Serialization.XmlArrayItemAttribute("ParentCategories", typeof(ParentCategory), IsNullable = false)]
+    [XmlArray(Order = 17)]
+    [XmlArrayItem("ParentCategories", typeof(ParentCategory), IsNullable = false)]
     public List<ParentCategory> ParentCategoryPaths
     {
         get
         {
-            return this.parentCategoryPathsField;
+            return parentCategoryPathsField;
         }
         set
         {
-            this.parentCategoryPathsField = value;
+            parentCategoryPathsField = value;
         }
     }
 }
@@ -435,18 +435,18 @@ public partial class TrackList
 
     public TrackList()
     {
-        this.trackField = new List<Track>();
+        trackField = new List<Track>();
     }
 
     public int DiscNumber
     {
         get
         {
-            return this.discNumberField;
+            return discNumberField;
         }
         set
         {
-            this.discNumberField = value;
+            discNumberField = value;
         }
     }
 
@@ -454,11 +454,11 @@ public partial class TrackList
     {
         get
         {
-            return this.trackField;
+            return trackField;
         }
         set
         {
-            this.trackField = value;
+            trackField = value;
         }
     }
 }
@@ -474,11 +474,11 @@ public partial class Track
     {
         get
         {
-            return this.titleField;
+            return titleField;
         }
         set
         {
-            this.titleField = value;
+            titleField = value;
         }
     }
 
@@ -486,11 +486,11 @@ public partial class Track
     {
         get
         {
-            return this.trackNumberField;
+            return trackNumberField;
         }
         set
         {
-            this.trackNumberField = value;
+            trackNumberField = value;
         }
     }
 }
@@ -504,18 +504,18 @@ public partial class AttributeGroup
 
     public AttributeGroup()
     {
-        this.attributesField = new List<Entry>();
+        attributesField = new List<Entry>();
     }
 
     public string Title
     {
         get
         {
-            return this.titleField;
+            return titleField;
         }
         set
         {
-            this.titleField = value;
+            titleField = value;
         }
     }
 
@@ -523,11 +523,11 @@ public partial class AttributeGroup
     {
         get
         {
-            return this.attributesField;
+            return attributesField;
         }
         set
         {
-            this.attributesField = value;
+            attributesField = value;
         }
     }
 }
@@ -545,11 +545,11 @@ public partial class Entry
     {
         get
         {
-            return this.keyField;
+            return keyField;
         }
         set
         {
-            this.keyField = value;
+            keyField = value;
         }
     }
 
@@ -557,11 +557,11 @@ public partial class Entry
     {
         get
         {
-            return this.labelField;
+            return labelField;
         }
         set
         {
-            this.labelField = value;
+            labelField = value;
         }
     }
 
@@ -569,11 +569,11 @@ public partial class Entry
     {
         get
         {
-            return this.valueField;
+            return valueField;
         }
         set
         {
-            this.valueField = value;
+            valueField = value;
         }
     }
 }
@@ -587,18 +587,18 @@ public partial class EntityGroup
 
     public EntityGroup()
     {
-        this.entitiesField = new List<Entity>();
+        entitiesField = new List<Entity>();
     }
 
     public string Title
     {
         get
         {
-            return this.titleField;
+            return titleField;
         }
         set
         {
-            this.titleField = value;
+            titleField = value;
         }
     }
 
@@ -606,11 +606,11 @@ public partial class EntityGroup
     {
         get
         {
-            return this.entitiesField;
+            return entitiesField;
         }
         set
         {
-            this.entitiesField = value;
+            entitiesField = value;
         }
     }
 }
@@ -628,11 +628,11 @@ public partial class Entity
     {
         get
         {
-            return this.idField;
+            return idField;
         }
         set
         {
-            this.idField = value;
+            idField = value;
         }
     }
 
@@ -640,11 +640,11 @@ public partial class Entity
     {
         get
         {
-            return this.labelField;
+            return labelField;
         }
         set
         {
-            this.labelField = value;
+            labelField = value;
         }
     }
 
@@ -652,11 +652,11 @@ public partial class Entity
     {
         get
         {
-            return this.valueField;
+            return valueField;
         }
         set
         {
-            this.valueField = value;
+            valueField = value;
         }
     }
 }
@@ -674,11 +674,11 @@ public partial class MediaEntry
     {
         get
         {
-            return this.typeField;
+            return typeField;
         }
         set
         {
-            this.typeField = value;
+            typeField = value;
         }
     }
 
@@ -686,11 +686,11 @@ public partial class MediaEntry
     {
         get
         {
-            return this.keyField;
+            return keyField;
         }
         set
         {
-            this.keyField = value;
+            keyField = value;
         }
     }
 
@@ -698,11 +698,11 @@ public partial class MediaEntry
     {
         get
         {
-            return this.urlField;
+            return urlField;
         }
         set
         {
-            this.urlField = value;
+            urlField = value;
         }
     }
 }
@@ -726,31 +726,31 @@ public partial class OfferData
 
     public OfferData()
     {
-        this.offersField = new List<Offer>();
+        offersField = new List<Offer>();
     }
 
     public int Bolcom
     {
         get
         {
-            return this.bolcomField;
+            return bolcomField;
         }
         set
         {
-            this.bolcomField = value;
+            bolcomField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool BolcomSpecified
     {
         get
         {
-            return this.bolcomFieldSpecified;
+            return bolcomFieldSpecified;
         }
         set
         {
-            this.bolcomFieldSpecified = value;
+            bolcomFieldSpecified = value;
         }
     }
 
@@ -758,24 +758,24 @@ public partial class OfferData
     {
         get
         {
-            return this.nonProfessionalSellersField;
+            return nonProfessionalSellersField;
         }
         set
         {
-            this.nonProfessionalSellersField = value;
+            nonProfessionalSellersField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool NonProfessionalSellersSpecified
     {
         get
         {
-            return this.nonProfessionalSellersFieldSpecified;
+            return nonProfessionalSellersFieldSpecified;
         }
         set
         {
-            this.nonProfessionalSellersFieldSpecified = value;
+            nonProfessionalSellersFieldSpecified = value;
         }
     }
 
@@ -783,24 +783,24 @@ public partial class OfferData
     {
         get
         {
-            return this.professionalSellersField;
+            return professionalSellersField;
         }
         set
         {
-            this.professionalSellersField = value;
+            professionalSellersField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool ProfessionalSellersSpecified
     {
         get
         {
-            return this.professionalSellersFieldSpecified;
+            return professionalSellersFieldSpecified;
         }
         set
         {
-            this.professionalSellersFieldSpecified = value;
+            professionalSellersFieldSpecified = value;
         }
     }
 
@@ -808,11 +808,11 @@ public partial class OfferData
     {
         get
         {
-            return this.offersField;
+            return offersField;
         }
         set
         {
-            this.offersField = value;
+            offersField = value;
         }
     }
 }
@@ -842,18 +842,18 @@ public partial class Offer
 
     public Offer()
     {
-        this.sellerField = new Seller();
+        sellerField = new Seller();
     }
 
     public string Id
     {
         get
         {
-            return this.idField;
+            return idField;
         }
         set
         {
-            this.idField = value;
+            idField = value;
         }
     }
 
@@ -861,11 +861,11 @@ public partial class Offer
     {
         get
         {
-            return this.conditionField;
+            return conditionField;
         }
         set
         {
-            this.conditionField = value;
+            conditionField = value;
         }
     }
 
@@ -873,24 +873,24 @@ public partial class Offer
     {
         get
         {
-            return this.priceField;
+            return priceField;
         }
         set
         {
-            this.priceField = value;
+            priceField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool PriceSpecified
     {
         get
         {
-            return this.priceFieldSpecified;
+            return priceFieldSpecified;
         }
         set
         {
-            this.priceFieldSpecified = value;
+            priceFieldSpecified = value;
         }
     }
 
@@ -898,24 +898,24 @@ public partial class Offer
     {
         get
         {
-            return this.listPriceField;
+            return listPriceField;
         }
         set
         {
-            this.listPriceField = value;
+            listPriceField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool ListPriceSpecified
     {
         get
         {
-            return this.listPriceFieldSpecified;
+            return listPriceFieldSpecified;
         }
         set
         {
-            this.listPriceFieldSpecified = value;
+            listPriceFieldSpecified = value;
         }
     }
 
@@ -923,11 +923,11 @@ public partial class Offer
     {
         get
         {
-            return this.availabilityCodeField;
+            return availabilityCodeField;
         }
         set
         {
-            this.availabilityCodeField = value;
+            availabilityCodeField = value;
         }
     }
 
@@ -935,11 +935,11 @@ public partial class Offer
     {
         get
         {
-            return this.availabilityDescriptionField;
+            return availabilityDescriptionField;
         }
         set
         {
-            this.availabilityDescriptionField = value;
+            availabilityDescriptionField = value;
         }
     }
 
@@ -947,11 +947,11 @@ public partial class Offer
     {
         get
         {
-            return this.commentField;
+            return commentField;
         }
         set
         {
-            this.commentField = value;
+            commentField = value;
         }
     }
 
@@ -959,11 +959,11 @@ public partial class Offer
     {
         get
         {
-            return this.sellerField;
+            return sellerField;
         }
         set
         {
-            this.sellerField = value;
+            sellerField = value;
         }
     }
 }
@@ -1001,11 +1001,11 @@ public partial class Seller
     {
         get
         {
-            return this.idField;
+            return idField;
         }
         set
         {
-            this.idField = value;
+            idField = value;
         }
     }
 
@@ -1013,11 +1013,11 @@ public partial class Seller
     {
         get
         {
-            return this.sellerTypeField;
+            return sellerTypeField;
         }
         set
         {
-            this.sellerTypeField = value;
+            sellerTypeField = value;
         }
     }
 
@@ -1025,11 +1025,11 @@ public partial class Seller
     {
         get
         {
-            return this.displayNameField;
+            return displayNameField;
         }
         set
         {
-            this.displayNameField = value;
+            displayNameField = value;
         }
     }
 
@@ -1037,24 +1037,24 @@ public partial class Seller
     {
         get
         {
-            return this.numberOfReviewsField;
+            return numberOfReviewsField;
         }
         set
         {
-            this.numberOfReviewsField = value;
+            numberOfReviewsField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool NumberOfReviewsSpecified
     {
         get
         {
-            return this.numberOfReviewsFieldSpecified;
+            return numberOfReviewsFieldSpecified;
         }
         set
         {
-            this.numberOfReviewsFieldSpecified = value;
+            numberOfReviewsFieldSpecified = value;
         }
     }
 
@@ -1062,24 +1062,24 @@ public partial class Seller
     {
         get
         {
-            return this.overallRatingField;
+            return overallRatingField;
         }
         set
         {
-            this.overallRatingField = value;
+            overallRatingField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool OverallRatingSpecified
     {
         get
         {
-            return this.overallRatingFieldSpecified;
+            return overallRatingFieldSpecified;
         }
         set
         {
-            this.overallRatingFieldSpecified = value;
+            overallRatingFieldSpecified = value;
         }
     }
 
@@ -1087,11 +1087,11 @@ public partial class Seller
     {
         get
         {
-            return this.urlField;
+            return urlField;
         }
         set
         {
-            this.urlField = value;
+            urlField = value;
         }
     }
 
@@ -1099,11 +1099,11 @@ public partial class Seller
     {
         get
         {
-            return this.logoField;
+            return logoField;
         }
         set
         {
-            this.logoField = value;
+            logoField = value;
         }
     }
 
@@ -1111,11 +1111,11 @@ public partial class Seller
     {
         get
         {
-            return this.emailAddressField;
+            return emailAddressField;
         }
         set
         {
-            this.emailAddressField = value;
+            emailAddressField = value;
         }
     }
 
@@ -1123,11 +1123,11 @@ public partial class Seller
     {
         get
         {
-            return this.phoneNumberField;
+            return phoneNumberField;
         }
         set
         {
-            this.phoneNumberField = value;
+            phoneNumberField = value;
         }
     }
 
@@ -1135,11 +1135,11 @@ public partial class Seller
     {
         get
         {
-            return this.addressLine1Field;
+            return addressLine1Field;
         }
         set
         {
-            this.addressLine1Field = value;
+            addressLine1Field = value;
         }
     }
 
@@ -1147,11 +1147,11 @@ public partial class Seller
     {
         get
         {
-            return this.addressLine2Field;
+            return addressLine2Field;
         }
         set
         {
-            this.addressLine2Field = value;
+            addressLine2Field = value;
         }
     }
 }
@@ -1171,11 +1171,11 @@ public partial class Promotion
     {
         get
         {
-            return this.titleField;
+            return titleField;
         }
         set
         {
-            this.titleField = value;
+            titleField = value;
         }
     }
 
@@ -1183,11 +1183,11 @@ public partial class Promotion
     {
         get
         {
-            return this.descriptionField;
+            return descriptionField;
         }
         set
         {
-            this.descriptionField = value;
+            descriptionField = value;
         }
     }
 
@@ -1195,11 +1195,11 @@ public partial class Promotion
     {
         get
         {
-            return this.urlField;
+            return urlField;
         }
         set
         {
-            this.urlField = value;
+            urlField = value;
         }
     }
 
@@ -1207,11 +1207,11 @@ public partial class Promotion
     {
         get
         {
-            return this.urlTextField;
+            return urlTextField;
         }
         set
         {
-            this.urlTextField = value;
+            urlTextField = value;
         }
     }
 }
@@ -1227,11 +1227,11 @@ public partial class ParentCategory
     {
         get
         {
-            return this.idField;
+            return idField;
         }
         set
         {
-            this.idField = value;
+            idField = value;
         }
     }
 
@@ -1239,11 +1239,11 @@ public partial class ParentCategory
     {
         get
         {
-            return this.nameField;
+            return nameField;
         }
         set
         {
-            this.nameField = value;
+            nameField = value;
         }
     }
 }
@@ -1261,31 +1261,31 @@ public partial class SellerList
 
     public SellerList()
     {
-        this.productsField = new List<Product>();
+        productsField = new List<Product>();
     }
 
     public long TotalResultSize
     {
         get
         {
-            return this.totalResultSizeField;
+            return totalResultSizeField;
         }
         set
         {
-            this.totalResultSizeField = value;
+            totalResultSizeField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool TotalResultSizeSpecified
     {
         get
         {
-            return this.totalResultSizeFieldSpecified;
+            return totalResultSizeFieldSpecified;
         }
         set
         {
-            this.totalResultSizeFieldSpecified = value;
+            totalResultSizeFieldSpecified = value;
         }
     }
 
@@ -1293,11 +1293,11 @@ public partial class SellerList
     {
         get
         {
-            return this.sellerIdField;
+            return sellerIdField;
         }
         set
         {
-            this.sellerIdField = value;
+            sellerIdField = value;
         }
     }
 
@@ -1305,11 +1305,11 @@ public partial class SellerList
     {
         get
         {
-            return this.productsField;
+            return productsField;
         }
         set
         {
-            this.productsField = value;
+            productsField = value;
         }
     }
 }
@@ -1323,11 +1323,11 @@ public partial class Pong
     {
         get
         {
-            return this.messageField;
+            return messageField;
         }
         set
         {
-            this.messageField = value;
+            messageField = value;
         }
     }
 }
@@ -1349,21 +1349,21 @@ public partial class ListResults
 
     public ListResults()
     {
-        this.refinementGroupsField = new List<RefinementGroup>();
-        this.categoriesField = new List<Category>();
-        this.productsField = new List<Product>();
-        this.originalRequestField = new OriginalRequest();
+        refinementGroupsField = new List<RefinementGroup>();
+        categoriesField = new List<Category>();
+        productsField = new List<Product>();
+        originalRequestField = new OriginalRequest();
     }
 
     public OriginalRequest OriginalRequest
     {
         get
         {
-            return this.originalRequestField;
+            return originalRequestField;
         }
         set
         {
-            this.originalRequestField = value;
+            originalRequestField = value;
         }
     }
 
@@ -1371,24 +1371,24 @@ public partial class ListResults
     {
         get
         {
-            return this.totalResultSizeField;
+            return totalResultSizeField;
         }
         set
         {
-            this.totalResultSizeField = value;
+            totalResultSizeField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool TotalResultSizeSpecified
     {
         get
         {
-            return this.totalResultSizeFieldSpecified;
+            return totalResultSizeFieldSpecified;
         }
         set
         {
-            this.totalResultSizeFieldSpecified = value;
+            totalResultSizeFieldSpecified = value;
         }
     }
 
@@ -1396,11 +1396,11 @@ public partial class ListResults
     {
         get
         {
-            return this.productsField;
+            return productsField;
         }
         set
         {
-            this.productsField = value;
+            productsField = value;
         }
     }
 
@@ -1408,11 +1408,11 @@ public partial class ListResults
     {
         get
         {
-            return this.categoriesField;
+            return categoriesField;
         }
         set
         {
-            this.categoriesField = value;
+            categoriesField = value;
         }
     }
 
@@ -1420,11 +1420,11 @@ public partial class ListResults
     {
         get
         {
-            return this.refinementGroupsField;
+            return refinementGroupsField;
         }
         set
         {
-            this.refinementGroupsField = value;
+            refinementGroupsField = value;
         }
     }
 }
@@ -1438,19 +1438,19 @@ public partial class OriginalRequest
 
     public OriginalRequest()
     {
-        this.refinementGroupsField = new List<RefinementGroup>();
-        this.categoryField = new Category();
+        refinementGroupsField = new List<RefinementGroup>();
+        categoryField = new Category();
     }
 
     public Category Category
     {
         get
         {
-            return this.categoryField;
+            return categoryField;
         }
         set
         {
-            this.categoryField = value;
+            categoryField = value;
         }
     }
 
@@ -1458,11 +1458,11 @@ public partial class OriginalRequest
     {
         get
         {
-            return this.refinementGroupsField;
+            return refinementGroupsField;
         }
         set
         {
-            this.refinementGroupsField = value;
+            refinementGroupsField = value;
         }
     }
 }
@@ -1482,18 +1482,18 @@ public partial class Category
 
     public Category()
     {
-        this.refinementsField = new List<Refinement>();
+        refinementsField = new List<Refinement>();
     }
 
     public string Id
     {
         get
         {
-            return this.idField;
+            return idField;
         }
         set
         {
-            this.idField = value;
+            idField = value;
         }
     }
 
@@ -1501,11 +1501,11 @@ public partial class Category
     {
         get
         {
-            return this.nameField;
+            return nameField;
         }
         set
         {
-            this.nameField = value;
+            nameField = value;
         }
     }
 
@@ -1513,24 +1513,24 @@ public partial class Category
     {
         get
         {
-            return this.productCountField;
+            return productCountField;
         }
         set
         {
-            this.productCountField = value;
+            productCountField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool ProductCountSpecified
     {
         get
         {
-            return this.productCountFieldSpecified;
+            return productCountFieldSpecified;
         }
         set
         {
-            this.productCountFieldSpecified = value;
+            productCountFieldSpecified = value;
         }
     }
 
@@ -1538,11 +1538,11 @@ public partial class Category
     {
         get
         {
-            return this.refinementsField;
+            return refinementsField;
         }
         set
         {
-            this.refinementsField = value;
+            refinementsField = value;
         }
     }
 }
@@ -1562,11 +1562,11 @@ public partial class Refinement
     {
         get
         {
-            return this.idField;
+            return idField;
         }
         set
         {
-            this.idField = value;
+            idField = value;
         }
     }
 
@@ -1574,11 +1574,11 @@ public partial class Refinement
     {
         get
         {
-            return this.nameField;
+            return nameField;
         }
         set
         {
-            this.nameField = value;
+            nameField = value;
         }
     }
 
@@ -1586,24 +1586,24 @@ public partial class Refinement
     {
         get
         {
-            return this.productCountField;
+            return productCountField;
         }
         set
         {
-            this.productCountField = value;
+            productCountField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool ProductCountSpecified
     {
         get
         {
-            return this.productCountFieldSpecified;
+            return productCountFieldSpecified;
         }
         set
         {
-            this.productCountFieldSpecified = value;
+            productCountFieldSpecified = value;
         }
     }
 }
@@ -1627,18 +1627,18 @@ public partial class RefinementGroup
 
     public RefinementGroup()
     {
-        this.refinementsField = new List<Refinement>();
+        refinementsField = new List<Refinement>();
     }
 
     public string Id
     {
         get
         {
-            return this.idField;
+            return idField;
         }
         set
         {
-            this.idField = value;
+            idField = value;
         }
     }
 
@@ -1646,11 +1646,11 @@ public partial class RefinementGroup
     {
         get
         {
-            return this.nameField;
+            return nameField;
         }
         set
         {
-            this.nameField = value;
+            nameField = value;
         }
     }
 
@@ -1658,24 +1658,24 @@ public partial class RefinementGroup
     {
         get
         {
-            return this.productCountField;
+            return productCountField;
         }
         set
         {
-            this.productCountField = value;
+            productCountField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool ProductCountSpecified
     {
         get
         {
-            return this.productCountFieldSpecified;
+            return productCountFieldSpecified;
         }
         set
         {
-            this.productCountFieldSpecified = value;
+            productCountFieldSpecified = value;
         }
     }
 
@@ -1683,24 +1683,24 @@ public partial class RefinementGroup
     {
         get
         {
-            return this.multiSelectField;
+            return multiSelectField;
         }
         set
         {
-            this.multiSelectField = value;
+            multiSelectField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool MultiSelectSpecified
     {
         get
         {
-            return this.multiSelectFieldSpecified;
+            return multiSelectFieldSpecified;
         }
         set
         {
-            this.multiSelectFieldSpecified = value;
+            multiSelectFieldSpecified = value;
         }
     }
 
@@ -1708,11 +1708,11 @@ public partial class RefinementGroup
     {
         get
         {
-            return this.refinementsField;
+            return refinementsField;
         }
         set
         {
-            this.refinementsField = value;
+            refinementsField = value;
         }
     }
 }
@@ -1734,21 +1734,21 @@ public partial class SearchResults
 
     public SearchResults()
     {
-        this.refinementGroupsField = new List<RefinementGroup>();
-        this.categoriesField = new List<Category>();
-        this.productsField = new List<Product>();
-        this.originalRequestField = new OriginalRequest();
+        refinementGroupsField = new List<RefinementGroup>();
+        categoriesField = new List<Category>();
+        productsField = new List<Product>();
+        originalRequestField = new OriginalRequest();
     }
 
     public OriginalRequest OriginalRequest
     {
         get
         {
-            return this.originalRequestField;
+            return originalRequestField;
         }
         set
         {
-            this.originalRequestField = value;
+            originalRequestField = value;
         }
     }
 
@@ -1756,24 +1756,24 @@ public partial class SearchResults
     {
         get
         {
-            return this.totalResultSizeField;
+            return totalResultSizeField;
         }
         set
         {
-            this.totalResultSizeField = value;
+            totalResultSizeField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool TotalResultSizeSpecified
     {
         get
         {
-            return this.totalResultSizeFieldSpecified;
+            return totalResultSizeFieldSpecified;
         }
         set
         {
-            this.totalResultSizeFieldSpecified = value;
+            totalResultSizeFieldSpecified = value;
         }
     }
 
@@ -1781,11 +1781,11 @@ public partial class SearchResults
     {
         get
         {
-            return this.productsField;
+            return productsField;
         }
         set
         {
-            this.productsField = value;
+            productsField = value;
         }
     }
 
@@ -1793,11 +1793,11 @@ public partial class SearchResults
     {
         get
         {
-            return this.categoriesField;
+            return categoriesField;
         }
         set
         {
-            this.categoriesField = value;
+            categoriesField = value;
         }
     }
 
@@ -1805,11 +1805,11 @@ public partial class SearchResults
     {
         get
         {
-            return this.refinementGroupsField;
+            return refinementGroupsField;
         }
         set
         {
-            this.refinementGroupsField = value;
+            refinementGroupsField = value;
         }
     }
 }
@@ -1821,18 +1821,18 @@ public partial class ProductOffers
 
     public ProductOffers()
     {
-        this.offerDataField = new OfferData();
+        offerDataField = new OfferData();
     }
 
     public OfferData OfferData
     {
         get
         {
-            return this.offerDataField;
+            return offerDataField;
         }
         set
         {
-            this.offerDataField = value;
+            offerDataField = value;
         }
     }
 }
@@ -1844,18 +1844,18 @@ public partial class ProductRecommendations
 
     public ProductRecommendations()
     {
-        this.productsField = new List<Product>();
+        productsField = new List<Product>();
     }
 
     public List<Product> Products
     {
         get
         {
-            return this.productsField;
+            return productsField;
         }
         set
         {
-            this.productsField = value;
+            productsField = value;
         }
     }
 }
@@ -1917,36 +1917,36 @@ public partial class Basket
 
     public Basket()
     {
-        this.pricingAdjustmentsField = new List<PricingAdjustment>();
-        this.basketItemsField = new List<BasketItem>();
-        this.basketMessagesField = new List<string>();
-        this.specialRequirementsField = new List<string>();
-        this.shippingAddressField = new Address();
-        this.billingAddressField = new Address();
+        pricingAdjustmentsField = new List<PricingAdjustment>();
+        basketItemsField = new List<BasketItem>();
+        basketMessagesField = new List<string>();
+        specialRequirementsField = new List<string>();
+        shippingAddressField = new Address();
+        billingAddressField = new Address();
     }
 
     public double TotalAmountArticles
     {
         get
         {
-            return this.totalAmountArticlesField;
+            return totalAmountArticlesField;
         }
         set
         {
-            this.totalAmountArticlesField = value;
+            totalAmountArticlesField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool TotalAmountArticlesSpecified
     {
         get
         {
-            return this.totalAmountArticlesFieldSpecified;
+            return totalAmountArticlesFieldSpecified;
         }
         set
         {
-            this.totalAmountArticlesFieldSpecified = value;
+            totalAmountArticlesFieldSpecified = value;
         }
     }
 
@@ -1954,24 +1954,24 @@ public partial class Basket
     {
         get
         {
-            return this.subTotalField;
+            return subTotalField;
         }
         set
         {
-            this.subTotalField = value;
+            subTotalField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool SubTotalSpecified
     {
         get
         {
-            return this.subTotalFieldSpecified;
+            return subTotalFieldSpecified;
         }
         set
         {
-            this.subTotalFieldSpecified = value;
+            subTotalFieldSpecified = value;
         }
     }
 
@@ -1979,24 +1979,24 @@ public partial class Basket
     {
         get
         {
-            return this.shippingFeeField;
+            return shippingFeeField;
         }
         set
         {
-            this.shippingFeeField = value;
+            shippingFeeField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool ShippingFeeSpecified
     {
         get
         {
-            return this.shippingFeeFieldSpecified;
+            return shippingFeeFieldSpecified;
         }
         set
         {
-            this.shippingFeeFieldSpecified = value;
+            shippingFeeFieldSpecified = value;
         }
     }
 
@@ -2004,24 +2004,24 @@ public partial class Basket
     {
         get
         {
-            return this.totalField;
+            return totalField;
         }
         set
         {
-            this.totalField = value;
+            totalField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool TotalSpecified
     {
         get
         {
-            return this.totalFieldSpecified;
+            return totalFieldSpecified;
         }
         set
         {
-            this.totalFieldSpecified = value;
+            totalFieldSpecified = value;
         }
     }
 
@@ -2029,24 +2029,24 @@ public partial class Basket
     {
         get
         {
-            return this.serviceFeeField;
+            return serviceFeeField;
         }
         set
         {
-            this.serviceFeeField = value;
+            serviceFeeField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool ServiceFeeSpecified
     {
         get
         {
-            return this.serviceFeeFieldSpecified;
+            return serviceFeeFieldSpecified;
         }
         set
         {
-            this.serviceFeeFieldSpecified = value;
+            serviceFeeFieldSpecified = value;
         }
     }
 
@@ -2054,24 +2054,24 @@ public partial class Basket
     {
         get
         {
-            return this.giftWrapFeeField;
+            return giftWrapFeeField;
         }
         set
         {
-            this.giftWrapFeeField = value;
+            giftWrapFeeField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool GiftWrapFeeSpecified
     {
         get
         {
-            return this.giftWrapFeeFieldSpecified;
+            return giftWrapFeeFieldSpecified;
         }
         set
         {
-            this.giftWrapFeeFieldSpecified = value;
+            giftWrapFeeFieldSpecified = value;
         }
     }
 
@@ -2079,11 +2079,11 @@ public partial class Basket
     {
         get
         {
-            return this.billingAddressField;
+            return billingAddressField;
         }
         set
         {
-            this.billingAddressField = value;
+            billingAddressField = value;
         }
     }
 
@@ -2091,11 +2091,11 @@ public partial class Basket
     {
         get
         {
-            return this.shippingAddressField;
+            return shippingAddressField;
         }
         set
         {
-            this.shippingAddressField = value;
+            shippingAddressField = value;
         }
     }
 
@@ -2103,24 +2103,24 @@ public partial class Basket
     {
         get
         {
-            return this.totalQuantityField;
+            return totalQuantityField;
         }
         set
         {
-            this.totalQuantityField = value;
+            totalQuantityField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool TotalQuantitySpecified
     {
         get
         {
-            return this.totalQuantityFieldSpecified;
+            return totalQuantityFieldSpecified;
         }
         set
         {
-            this.totalQuantityFieldSpecified = value;
+            totalQuantityFieldSpecified = value;
         }
     }
 
@@ -2128,24 +2128,24 @@ public partial class Basket
     {
         get
         {
-            return this.shippableAbroadField;
+            return shippableAbroadField;
         }
         set
         {
-            this.shippableAbroadField = value;
+            shippableAbroadField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool ShippableAbroadSpecified
     {
         get
         {
-            return this.shippableAbroadFieldSpecified;
+            return shippableAbroadFieldSpecified;
         }
         set
         {
-            this.shippableAbroadFieldSpecified = value;
+            shippableAbroadFieldSpecified = value;
         }
     }
 
@@ -2153,24 +2153,24 @@ public partial class Basket
     {
         get
         {
-            return this.combinableField;
+            return combinableField;
         }
         set
         {
-            this.combinableField = value;
+            combinableField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool CombinableSpecified
     {
         get
         {
-            return this.combinableFieldSpecified;
+            return combinableFieldSpecified;
         }
         set
         {
-            this.combinableFieldSpecified = value;
+            combinableFieldSpecified = value;
         }
     }
 
@@ -2178,24 +2178,24 @@ public partial class Basket
     {
         get
         {
-            return this.openForUseField;
+            return openForUseField;
         }
         set
         {
-            this.openForUseField = value;
+            openForUseField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool OpenForUseSpecified
     {
         get
         {
-            return this.openForUseFieldSpecified;
+            return openForUseFieldSpecified;
         }
         set
         {
-            this.openForUseFieldSpecified = value;
+            openForUseFieldSpecified = value;
         }
     }
 
@@ -2203,11 +2203,11 @@ public partial class Basket
     {
         get
         {
-            return this.specialRequirementsField;
+            return specialRequirementsField;
         }
         set
         {
-            this.specialRequirementsField = value;
+            specialRequirementsField = value;
         }
     }
 
@@ -2215,11 +2215,11 @@ public partial class Basket
     {
         get
         {
-            return this.basketMessagesField;
+            return basketMessagesField;
         }
         set
         {
-            this.basketMessagesField = value;
+            basketMessagesField = value;
         }
     }
 
@@ -2227,11 +2227,11 @@ public partial class Basket
     {
         get
         {
-            return this.basketItemsField;
+            return basketItemsField;
         }
         set
         {
-            this.basketItemsField = value;
+            basketItemsField = value;
         }
     }
 
@@ -2239,11 +2239,11 @@ public partial class Basket
     {
         get
         {
-            return this.pricingAdjustmentsField;
+            return pricingAdjustmentsField;
         }
         set
         {
-            this.pricingAdjustmentsField = value;
+            pricingAdjustmentsField = value;
         }
     }
 }
@@ -2281,11 +2281,11 @@ public partial class Address
     {
         get
         {
-            return this.idField;
+            return idField;
         }
         set
         {
-            this.idField = value;
+            idField = value;
         }
     }
 
@@ -2293,11 +2293,11 @@ public partial class Address
     {
         get
         {
-            return this.genderField;
+            return genderField;
         }
         set
         {
-            this.genderField = value;
+            genderField = value;
         }
     }
 
@@ -2305,11 +2305,11 @@ public partial class Address
     {
         get
         {
-            return this.firstNameField;
+            return firstNameField;
         }
         set
         {
-            this.firstNameField = value;
+            firstNameField = value;
         }
     }
 
@@ -2317,11 +2317,11 @@ public partial class Address
     {
         get
         {
-            return this.lastNameField;
+            return lastNameField;
         }
         set
         {
-            this.lastNameField = value;
+            lastNameField = value;
         }
     }
 
@@ -2329,11 +2329,11 @@ public partial class Address
     {
         get
         {
-            return this.infixField;
+            return infixField;
         }
         set
         {
-            this.infixField = value;
+            infixField = value;
         }
     }
 
@@ -2341,11 +2341,11 @@ public partial class Address
     {
         get
         {
-            return this.companyNameField;
+            return companyNameField;
         }
         set
         {
-            this.companyNameField = value;
+            companyNameField = value;
         }
     }
 
@@ -2353,11 +2353,11 @@ public partial class Address
     {
         get
         {
-            return this.cityField;
+            return cityField;
         }
         set
         {
-            this.cityField = value;
+            cityField = value;
         }
     }
 
@@ -2365,11 +2365,11 @@ public partial class Address
     {
         get
         {
-            return this.countryField;
+            return countryField;
         }
         set
         {
-            this.countryField = value;
+            countryField = value;
         }
     }
 
@@ -2377,11 +2377,11 @@ public partial class Address
     {
         get
         {
-            return this.countyField;
+            return countyField;
         }
         set
         {
-            this.countyField = value;
+            countyField = value;
         }
     }
 
@@ -2389,11 +2389,11 @@ public partial class Address
     {
         get
         {
-            return this.houseNumberExtField;
+            return houseNumberExtField;
         }
         set
         {
-            this.houseNumberExtField = value;
+            houseNumberExtField = value;
         }
     }
 
@@ -2401,11 +2401,11 @@ public partial class Address
     {
         get
         {
-            return this.houseNumberField;
+            return houseNumberField;
         }
         set
         {
-            this.houseNumberField = value;
+            houseNumberField = value;
         }
     }
 
@@ -2413,11 +2413,11 @@ public partial class Address
     {
         get
         {
-            return this.postalCodeField;
+            return postalCodeField;
         }
         set
         {
-            this.postalCodeField = value;
+            postalCodeField = value;
         }
     }
 
@@ -2425,11 +2425,11 @@ public partial class Address
     {
         get
         {
-            return this.streetNameField;
+            return streetNameField;
         }
         set
         {
-            this.streetNameField = value;
+            streetNameField = value;
         }
     }
 }
@@ -2469,19 +2469,19 @@ public partial class BasketItem
 
     public BasketItem()
     {
-        this.productField = new Product();
-        this.sellerField = new Seller();
+        productField = new Product();
+        sellerField = new Seller();
     }
 
     public string Id
     {
         get
         {
-            return this.idField;
+            return idField;
         }
         set
         {
-            this.idField = value;
+            idField = value;
         }
     }
 
@@ -2489,24 +2489,24 @@ public partial class BasketItem
     {
         get
         {
-            return this.priceField;
+            return priceField;
         }
         set
         {
-            this.priceField = value;
+            priceField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool PriceSpecified
     {
         get
         {
-            return this.priceFieldSpecified;
+            return priceFieldSpecified;
         }
         set
         {
-            this.priceFieldSpecified = value;
+            priceFieldSpecified = value;
         }
     }
 
@@ -2514,24 +2514,24 @@ public partial class BasketItem
     {
         get
         {
-            return this.quantityField;
+            return quantityField;
         }
         set
         {
-            this.quantityField = value;
+            quantityField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool QuantitySpecified
     {
         get
         {
-            return this.quantityFieldSpecified;
+            return quantityFieldSpecified;
         }
         set
         {
-            this.quantityFieldSpecified = value;
+            quantityFieldSpecified = value;
         }
     }
 
@@ -2539,11 +2539,11 @@ public partial class BasketItem
     {
         get
         {
-            return this.conditionField;
+            return conditionField;
         }
         set
         {
-            this.conditionField = value;
+            conditionField = value;
         }
     }
 
@@ -2551,24 +2551,24 @@ public partial class BasketItem
     {
         get
         {
-            return this.listPriceField;
+            return listPriceField;
         }
         set
         {
-            this.listPriceField = value;
+            listPriceField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool ListPriceSpecified
     {
         get
         {
-            return this.listPriceFieldSpecified;
+            return listPriceFieldSpecified;
         }
         set
         {
-            this.listPriceFieldSpecified = value;
+            listPriceFieldSpecified = value;
         }
     }
 
@@ -2576,11 +2576,11 @@ public partial class BasketItem
     {
         get
         {
-            return this.availabilityCodeField;
+            return availabilityCodeField;
         }
         set
         {
-            this.availabilityCodeField = value;
+            availabilityCodeField = value;
         }
     }
 
@@ -2588,11 +2588,11 @@ public partial class BasketItem
     {
         get
         {
-            return this.availabilityDescriptionField;
+            return availabilityDescriptionField;
         }
         set
         {
-            this.availabilityDescriptionField = value;
+            availabilityDescriptionField = value;
         }
     }
 
@@ -2600,11 +2600,11 @@ public partial class BasketItem
     {
         get
         {
-            return this.commentField;
+            return commentField;
         }
         set
         {
-            this.commentField = value;
+            commentField = value;
         }
     }
 
@@ -2612,24 +2612,24 @@ public partial class BasketItem
     {
         get
         {
-            return this.secondHandField;
+            return secondHandField;
         }
         set
         {
-            this.secondHandField = value;
+            secondHandField = value;
         }
     }
 
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    [XmlIgnore()]
     public bool SecondHandSpecified
     {
         get
         {
-            return this.secondHandFieldSpecified;
+            return secondHandFieldSpecified;
         }
         set
         {
-            this.secondHandFieldSpecified = value;
+            secondHandFieldSpecified = value;
         }
     }
 
@@ -2637,11 +2637,11 @@ public partial class BasketItem
     {
         get
         {
-            return this.sellerField;
+            return sellerField;
         }
         set
         {
-            this.sellerField = value;
+            sellerField = value;
         }
     }
 
@@ -2649,11 +2649,11 @@ public partial class BasketItem
     {
         get
         {
-            return this.productField;
+            return productField;
         }
         set
         {
-            this.productField = value;
+            productField = value;
         }
     }
 }
@@ -2671,11 +2671,11 @@ public partial class PricingAdjustment
     {
         get
         {
-            return this.descriptionField;
+            return descriptionField;
         }
         set
         {
-            this.descriptionField = value;
+            descriptionField = value;
         }
     }
 
@@ -2683,11 +2683,11 @@ public partial class PricingAdjustment
     {
         get
         {
-            return this.amountField;
+            return amountField;
         }
         set
         {
-            this.amountField = value;
+            amountField = value;
         }
     }
 
@@ -2695,11 +2695,11 @@ public partial class PricingAdjustment
     {
         get
         {
-            return this.revocableField;
+            return revocableField;
         }
         set
         {
-            this.revocableField = value;
+            revocableField = value;
         }
     }
 }
@@ -2715,11 +2715,11 @@ public partial class Error
     {
         get
         {
-            return this.codeField;
+            return codeField;
         }
         set
         {
-            this.codeField = value;
+            codeField = value;
         }
     }
 
@@ -2727,11 +2727,11 @@ public partial class Error
     {
         get
         {
-            return this.messageField;
+            return messageField;
         }
         set
         {
-            this.messageField = value;
+            messageField = value;
         }
     }
 }
@@ -2743,18 +2743,18 @@ public partial class WishList
 
     public WishList()
     {
-        this.wishListItemsField = new List<WishListItem>();
+        wishListItemsField = new List<WishListItem>();
     }
 
     public List<WishListItem> WishListItems
     {
         get
         {
-            return this.wishListItemsField;
+            return wishListItemsField;
         }
         set
         {
-            this.wishListItemsField = value;
+            wishListItemsField = value;
         }
     }
 }
@@ -2768,18 +2768,18 @@ public partial class WishListItem
 
     public WishListItem()
     {
-        this.productField = new Product();
+        productField = new Product();
     }
 
     public string Id
     {
         get
         {
-            return this.idField;
+            return idField;
         }
         set
         {
-            this.idField = value;
+            idField = value;
         }
     }
 
@@ -2787,11 +2787,11 @@ public partial class WishListItem
     {
         get
         {
-            return this.productField;
+            return productField;
         }
         set
         {
-            this.productField = value;
+            productField = value;
         }
     }
 }
@@ -2805,19 +2805,19 @@ public partial class RelatedProducts
 
     public RelatedProducts()
     {
-        this.accessoriesField = new List<Accessory>();
-        this.productFamiliesField = new List<ProductFamily>();
+        accessoriesField = new List<Accessory>();
+        productFamiliesField = new List<ProductFamily>();
     }
 
     public List<ProductFamily> ProductFamilies
     {
         get
         {
-            return this.productFamiliesField;
+            return productFamiliesField;
         }
         set
         {
-            this.productFamiliesField = value;
+            productFamiliesField = value;
         }
     }
 
@@ -2825,11 +2825,11 @@ public partial class RelatedProducts
     {
         get
         {
-            return this.accessoriesField;
+            return accessoriesField;
         }
         set
         {
-            this.accessoriesField = value;
+            accessoriesField = value;
         }
     }
 }
@@ -2845,18 +2845,18 @@ public partial class ProductFamily
 
     public ProductFamily()
     {
-        this.productFamilyMembersField = new List<ProductFamilyMember>();
+        productFamilyMembersField = new List<ProductFamilyMember>();
     }
 
     public string Key
     {
         get
         {
-            return this.keyField;
+            return keyField;
         }
         set
         {
-            this.keyField = value;
+            keyField = value;
         }
     }
 
@@ -2864,11 +2864,11 @@ public partial class ProductFamily
     {
         get
         {
-            return this.labelField;
+            return labelField;
         }
         set
         {
-            this.labelField = value;
+            labelField = value;
         }
     }
 
@@ -2876,11 +2876,11 @@ public partial class ProductFamily
     {
         get
         {
-            return this.productFamilyMembersField;
+            return productFamilyMembersField;
         }
         set
         {
-            this.productFamilyMembersField = value;
+            productFamilyMembersField = value;
         }
     }
 }
@@ -2896,11 +2896,11 @@ public partial class ProductFamilyMember
     {
         get
         {
-            return this.labelField;
+            return labelField;
         }
         set
         {
-            this.labelField = value;
+            labelField = value;
         }
     }
 
@@ -2908,11 +2908,11 @@ public partial class ProductFamilyMember
     {
         get
         {
-            return this.productIdField;
+            return productIdField;
         }
         set
         {
-            this.productIdField = value;
+            productIdField = value;
         }
     }
 }
@@ -2926,11 +2926,11 @@ public partial class Accessory
     {
         get
         {
-            return this.productIdField;
+            return productIdField;
         }
         set
         {
-            this.productIdField = value;
+            productIdField = value;
         }
     }
 }
@@ -2942,18 +2942,18 @@ public partial class ParentCategoryPaths
 
     public ParentCategoryPaths()
     {
-        this.parentCategoriesField = new List<ParentCategory>();
+        parentCategoriesField = new List<ParentCategory>();
     }
 
     public List<ParentCategory> ParentCategories
     {
         get
         {
-            return this.parentCategoriesField;
+            return parentCategoriesField;
         }
         set
         {
-            this.parentCategoriesField = value;
+            parentCategoriesField = value;
         }
     }
 }

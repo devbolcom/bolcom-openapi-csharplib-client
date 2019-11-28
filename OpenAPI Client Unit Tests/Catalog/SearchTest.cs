@@ -1,33 +1,34 @@
-﻿using Bol.OpenAPI.Client;
-using Bol.OpenAPI.Request.Catalog;
-using Bol.OpenAPI.Request.Common;
+﻿using System.Threading.Tasks;
+using Bol.OpenAPI.Client.Request.Catalog;
+using Bol.OpenAPI.Client.Request.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OpenAPI_Client_Unit_Tests
 {
     [TestClass]
     public class SearchTest
+        : ConfiguredTestBase
     {
-        private OpenApiClient client = new OpenApiClient(Constants.API_KEY);
-
         [TestMethod]
-        public void TestSearch()
+        public async Task TestSearch()
         {
-            SearchResultsRequest searchResultsRequest = new SearchResultsRequest();
-            searchResultsRequest.Query = "halo";
-            searchResultsRequest.IncludeAttributes = true;
-            searchResultsRequest.Offset = 10;
-            searchResultsRequest.Limit = 10;
-            searchResultsRequest.DataOutputs = new EnumTypes.DataOutputType[] { 
+            var searchResultsRequest = new SearchResultsRequest
+            {
+                Query = "halo",
+                IncludeAttributes = true,
+                Offset = 10,
+                Limit = 10,
+                DataOutputs = new[] {
                     EnumTypes.DataOutputType.PRODUCTS,
                     EnumTypes.DataOutputType.CATEGORIES,
                     EnumTypes.DataOutputType.REFINEMENTS
-                };
-            searchResultsRequest.Offers = new EnumTypes.OfferType[] { 
+                },
+                Offers = new[] {
                     EnumTypes.OfferType.ALL
-                };
-            
-            SearchResults searchResults = client.Search(searchResultsRequest);
+                }
+            };
+
+            var searchResults = await _client.SearchAsync(searchResultsRequest);
             Assert.IsTrue(searchResults.TotalResultSize > 0);
             Assert.IsNotNull(searchResults.Categories);
             Assert.IsTrue(searchResults.Categories.Count > 0);

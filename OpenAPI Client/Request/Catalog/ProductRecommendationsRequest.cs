@@ -1,16 +1,17 @@
-﻿using Bol.OpenAPI.Request.Common;
-using System;
-
-namespace Bol.OpenAPI.Request.Catalog
+﻿namespace Bol.OpenAPI.Client.Request.Catalog
 {
+    using Bol.OpenAPI.Client.Request.Common;
+
     public class ProductRecommendationsRequest
     {
-        public ProductRecommendationsRequest() { }
-
         public string Id { get; set; }
-        public Boolean? IncludeAttributes { get; set; }
+
+        public bool? IncludeAttributes { get; set; }
+
         public EnumTypes.OfferType[] Offers { get; set; }
-        public Int64? Offset { get; set; }
-        public Int32? Limit { get; set; }     
+
+        public long? Offset { get; set; }
+
+        public int? Limit { get; set; }
     }
 }

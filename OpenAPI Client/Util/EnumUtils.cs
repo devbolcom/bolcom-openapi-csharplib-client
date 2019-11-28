@@ -1,29 +1,21 @@
-﻿using System;
-using System.ComponentModel;
-using System.Reflection;
-
-namespace Bol.OpenAPI.Util
+﻿namespace Bol.OpenAPI.Client.Util
 {
+    using System;
+    using System.ComponentModel;
+
     public static class EnumUtils
     {
         public static string StringValueOf(Enum value)
         {
-            FieldInfo fi = value.GetType().GetField(value.ToString());
-            DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
-            if (attributes.Length > 0)
-            {
-                return attributes[0].Description;
-            }
-            else
-            {
-                return value.ToString();
-            }
+            var fi = value.GetType().GetField(value.ToString());
+            var attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+            return attributes.Length > 0 ? attributes[0].Description : value.ToString();
         }
 
         public static object EnumValueOf(string value, Type enumType)
         {
-            string[] names = Enum.GetNames(enumType);
-            foreach (string name in names)
+            foreach (var name in Enum.GetNames(enumType))
             {
                 if (StringValueOf((Enum)Enum.Parse(enumType, name)).Equals(value))
                 {

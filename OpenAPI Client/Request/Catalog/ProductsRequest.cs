@@ -1,14 +1,13 @@
-﻿using Bol.OpenAPI.Request.Common;
-using System;
-
-namespace Bol.OpenAPI.Request.Catalog
+﻿namespace Bol.OpenAPI.Client.Request.Catalog
 {
+    using Bol.OpenAPI.Client.Request.Common;
+
     public class ProductsRequest
     {
-        public ProductsRequest() { }
-
         public string[] Ids { get; set; }
-        public Boolean? IncludeAttributes { get; set; }
+
+        public bool? IncludeAttributes { get; set; }
+
         public EnumTypes.OfferType[] Offers { get; set; }
     }
 }

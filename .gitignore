@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.user
+/.vs
+/OpenAPI Client/bin
+/OpenAPI Client/obj
+/OpenAPI Client Unit Tests/bin
+/OpenAPI Client Unit Tests/obj

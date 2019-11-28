@@ -1,17 +1,20 @@
-﻿using System.Collections.Specialized;
-using System.Net;
-
-namespace Bol.OpenAPI.Util
+﻿namespace Bol.OpenAPI.Client.Builder
 {
-    class AccountsRequestBuilder
+    using System.Collections.Specialized;
+    using System.Net;
+    using Bol.OpenAPI.Client.Util;
+
+    internal static class AccountsRequestBuilder
     {
         public static HttpWebRequest ConstructSessionRequest(string apiKey)
         {
-            NameValueCollection queryParams = new NameValueCollection();
-            queryParams.Add("apikey", apiKey);
-            string queryString = HttpUtils.ToQueryString(queryParams);
+            var queryParams = new NameValueCollection
+            {
+                { "apikey", apiKey }
+            };
+            var queryString = HttpUtils.ToQueryString(queryParams);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/accounts/v4/sessions/" + queryString);
+            var request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/accounts/v4/sessions/" + queryString);
             request.Method = "GET";
             request.Accept = "application/json";
 
@@ -20,8 +23,10 @@ namespace Bol.OpenAPI.Util
 
         public static HttpWebRequest ConstructAuthTokenRequest(string apiKey, string successUrl, string errorUrl)
         {
-            NameValueCollection queryParams = new NameValueCollection();
-            queryParams.Add("apikey", apiKey);
+            var queryParams = new NameValueCollection
+            {
+                { "apikey", apiKey }
+            };
 
             if (successUrl != null)
             {
@@ -32,9 +37,9 @@ namespace Bol.OpenAPI.Util
                 queryParams.Add("errorUrl", errorUrl);
             }
 
-            string queryString = HttpUtils.ToQueryString(queryParams);
+            var queryString = HttpUtils.ToQueryString(queryParams);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/accounts/v4/authtokens/" + queryString);
+            var request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/accounts/v4/authtokens/" + queryString);
             request.Method = "POST";
             request.Accept = "application/json";
 
@@ -43,80 +48,90 @@ namespace Bol.OpenAPI.Util
 
         public static HttpWebRequest ConstructLoginRequest(string apiKey, string privateToken, string sessionId)
         {
-            NameValueCollection queryParams = new NameValueCollection();
-            queryParams.Add("apikey", apiKey);
+            var queryParams = new NameValueCollection
+            {
+                { "apikey", apiKey }
+            };
 
             if (privateToken != null)
             {
                 queryParams.Add("privatetoken", privateToken);
             }
 
-            string queryString = HttpUtils.ToQueryString(queryParams);
+            var queryString = HttpUtils.ToQueryString(queryParams);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/accounts/v4/login/" + queryString);
+            var request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/accounts/v4/login/" + queryString);
             request.Method = "POST";
             request.Accept = "application/json";
-            HttpUtils.AddSessionheader(request, sessionId);
+            HttpUtils.AddSessionHeader(request, sessionId);
 
             return request;
         }
 
         public static HttpWebRequest ConstructLogoutRequest(string apiKey, string sessionId)
         {
-            NameValueCollection queryParams = new NameValueCollection();
-            queryParams.Add("apikey", apiKey);
+            var queryParams = new NameValueCollection
+            {
+                { "apikey", apiKey }
+            };
 
-            string queryString = HttpUtils.ToQueryString(queryParams);
+            var queryString = HttpUtils.ToQueryString(queryParams);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/accounts/v4/logout/" + queryString);
+            var request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/accounts/v4/logout/" + queryString);
             request.Method = "POST";
             request.Accept = "application/json";
-            HttpUtils.AddSessionheader(request, sessionId);
+            HttpUtils.AddSessionHeader(request, sessionId);
 
             return request;
         }
 
         public static HttpWebRequest ConstructWishListRequest(string apiKey, string sessionId)
         {
-            NameValueCollection queryParams = new NameValueCollection();
-            queryParams.Add("apikey", apiKey);
+            var queryParams = new NameValueCollection
+            {
+                { "apikey", apiKey }
+            };
 
-            string queryString = HttpUtils.ToQueryString(queryParams);
+            var queryString = HttpUtils.ToQueryString(queryParams);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/accounts/v4/wishlists/" + queryString);
+            var request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/accounts/v4/wishlists/" + queryString);
             request.Method = "GET";
             request.Accept = "application/json";
-            HttpUtils.AddSessionheader(request, sessionId);
+            HttpUtils.AddSessionHeader(request, sessionId);
 
             return request;
         }
 
         public static HttpWebRequest ConstructWishListAddItemRequest(string apiKey, string sessionId, string productId)
         {
-            NameValueCollection queryParams = new NameValueCollection();
-            queryParams.Add("apikey", apiKey);
+            var queryParams = new NameValueCollection
+            {
+                { "apikey", apiKey }
+            };
 
-            string queryString = HttpUtils.ToQueryString(queryParams);
+            var queryString = HttpUtils.ToQueryString(queryParams);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/accounts/v4/wishlists/" + productId + "/" + queryString);
+            var request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/accounts/v4/wishlists/" + productId + "/" + queryString);
             request.Method = "POST";
             request.Accept = "application/json";
-            HttpUtils.AddSessionheader(request, sessionId);
+            HttpUtils.AddSessionHeader(request, sessionId);
 
             return request;
         }
 
         public static HttpWebRequest ConstructWishListRemoveItemRequest(string apiKey, string sessionId, string wishListItemId)
         {
-            NameValueCollection queryParams = new NameValueCollection();
-            queryParams.Add("apikey", apiKey);
+            var queryParams = new NameValueCollection
+            {
+                { "apikey", apiKey }
+            };
 
-            string queryString = HttpUtils.ToQueryString(queryParams);
+            var queryString = HttpUtils.ToQueryString(queryParams);
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/accounts/v4/wishlists/" + wishListItemId + "/" + queryString);
+            var request = (HttpWebRequest)WebRequest.Create(Constants.URL_PREFIX + "/accounts/v4/wishlists/" + wishListItemId + "/" + queryString);
             request.Method = "DELETE";
             request.Accept = "application/json";
-            HttpUtils.AddSessionheader(request, sessionId);
+            HttpUtils.AddSessionHeader(request, sessionId);
 
             return request;
         }

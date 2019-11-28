@@ -1,17 +1,16 @@
-﻿using Bol.OpenAPI.Client;
+﻿using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OpenAPI_Client_Unit_Tests
 {
     [TestClass]
     public class PingTest
+        : ConfiguredTestBase
     {
-        private OpenApiClient client = new OpenApiClient(Constants.API_KEY);
-
         [TestMethod]
-        public void TestPing()
+        public async Task TestPing()
         {
-            Pong pong = client.Ping();
+            var pong = await _client.PingAsync();
             Assert.IsNotNull(pong.Message);
         }
     }

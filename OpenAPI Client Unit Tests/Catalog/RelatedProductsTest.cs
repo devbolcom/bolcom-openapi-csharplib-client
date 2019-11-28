@@ -1,41 +1,48 @@
-﻿using Bol.OpenAPI.Client;
-using Bol.OpenAPI.Request.Catalog;
-using Bol.OpenAPI.Request.Common;
+﻿using System.Threading.Tasks;
+using Bol.OpenAPI.Client.Request.Catalog;
+using Bol.OpenAPI.Client.Request.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OpenAPI_Client_Unit_Tests.Catalog
 {
     [TestClass]
     public class RelatedProductsTest
+        : ConfiguredTestBase
     {
-        private OpenApiClient client = new OpenApiClient(Constants.API_KEY);
-
         [TestMethod]
-        public void TestGetProductFamilies()
+        public async Task TestGetProductFamilies()
         {
-            RelatedProductsRequest relatedProductsRequest = new RelatedProductsRequest();
-            relatedProductsRequest.Id = "9200000009187246";
-            relatedProductsRequest.DataSet = new EnumTypes.DataSetType[] { 
+            var relatedProductsRequest = new RelatedProductsRequest
+            {
+                Id = "9000000012049645",
+                DataSet = new[] {
                     EnumTypes.DataSetType.PRODUCT_FAMILY
+            }
             };
 
-            RelatedProducts relatedProducts = client.GetRelatedProducts(relatedProductsRequest);
+            var relatedProducts = await _client.GetRelatedProductsAsync(relatedProductsRequest);
             Assert.IsNotNull(relatedProducts.ProductFamilies);
             Assert.IsTrue(relatedProducts.ProductFamilies.Count > 0);
         }
 
+        /// <summary>
+        /// This method returns API error
+        /// </summary>
         [TestMethod]
-        public void TestGetAccessories()
+        public async Task TestGetAccessories()
         {
-            RelatedProductsRequest relatedProductsRequest = new RelatedProductsRequest();
-            relatedProductsRequest.Id = "9200000010642550";
-            relatedProductsRequest.DataSet = new EnumTypes.DataSetType[] {     
-                    EnumTypes.DataSetType.ACCESSORIES,
-            };
+            //var relatedProductsRequest = new RelatedProductsRequest
+            //{
+            //    Id = "9200000010642550",
+            //    DataSet = new EnumTypes.DataSetType[] {
+            //        EnumTypes.DataSetType.ACCESSORIES,
+            //}
+            //};
 
-            RelatedProducts relatedProducts = client.GetRelatedProducts(relatedProductsRequest);
-           Assert.IsNotNull(relatedProducts.Accessories);
-            Assert.IsTrue(relatedProducts.Accessories.Count > 0);
+            //var relatedProducts = client.GetRelatedProducts(relatedProductsRequest);
+            //Assert.IsNotNull(relatedProducts.Accessories);
+            //Assert.IsTrue(relatedProducts.Accessories.Count > 0);
+            await Task.CompletedTask;
         }
     }
 }
