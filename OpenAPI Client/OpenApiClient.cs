@@ -11,11 +11,13 @@ namespace Bol.OpenAPI.Client
 {
     public class OpenApiClient
     {
-        private string apiKey;
+        private readonly string apiKey;
+        private readonly IWebProxy proxy;
 
-        public OpenApiClient(string apiKey)
+        public OpenApiClient(string apiKey, IWebProxy proxy = null)
         {
             this.apiKey = apiKey;
+            this.proxy = proxy;
         }
 
         public Pong Ping()
@@ -170,6 +172,10 @@ namespace Bol.OpenAPI.Client
             HttpWebResponse response = null;
             try
             {
+                if (proxy != null)
+                {
+                    request.Proxy = proxy;
+                }
                 request.UserAgent = "bol.com API/4.0, 51c#_,,^..^,,_";
                 request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
 
